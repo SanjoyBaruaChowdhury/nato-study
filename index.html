@@ -6,695 +6,599 @@
 <title>NATO Economic Perceptions Study — Finland</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #F7F5F0; --surface: #FFFFFF; --border: #E2DDD6; --border-strong: #C8C2B8;
-    --text: #1A1714; --text-muted: #6B6560; --text-hint: #9E9890;
-    --accent: #1B4B8A; --accent-light: #EAF0F9; --accent-mid: #2E6FBE;
-    --success: #1D7A4E; --success-light: #E8F5EE; --danger: #C0392B;
-    --radius: 10px; --radius-lg: 16px;
-  }
-  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; font-size: 15px; line-height: 1.6; }
-  .page-header { background: var(--accent); color: white; padding: 2.5rem 2rem 2rem; text-align: center; }
-  .page-header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 400; margin-bottom: 0.4rem; color: white; }
-  .page-header p { font-size: 0.875rem; opacity: 0.75; font-weight: 300; max-width: 500px; margin: 0 auto; }
-  .phase-nav { display: flex; background: #142F5A; border-bottom: 1px solid rgba(255,255,255,0.1); }
-  .phase-nav button { flex: 1; padding: 0.75rem 0.5rem; background: none; border: none; color: rgba(255,255,255,0.45); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; cursor: default; display: flex; align-items: center; justify-content: center; gap: 6px; border-right: 1px solid rgba(255,255,255,0.08); transition: color 0.2s, background 0.2s; }
-  .phase-nav button:last-child { border-right: none; }
-  .phase-nav button.active { color: white; background: rgba(255,255,255,0.1); }
-  .phase-nav button.done { color: #7ECFA5; }
-  .phase-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.7; }
-  .container { max-width: 680px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-  .progress-bar-wrap { margin-bottom: 1.75rem; }
-  .progress-meta { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 500; }
-  .progress-track { height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
-  .progress-fill { height: 3px; background: var(--accent); border-radius: 2px; transition: width 0.4s ease; }
-  .section-intro { background: var(--accent-light); border: 1px solid #C5D8F0; border-radius: var(--radius); padding: 0.875rem 1.125rem; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--accent); line-height: 1.5; }
-  .field { margin-bottom: 1.5rem; }
-  .field-label { display: block; font-size: 0.875rem; font-weight: 500; color: var(--text); margin-bottom: 0.5rem; line-height: 1.4; }
-  .field-hint { display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.6rem; font-style: italic; }
-  .field select { width: 100%; padding: 0.6rem 0.875rem; border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--surface); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.875rem; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6560' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.875rem center; padding-right: 2.5rem; cursor: pointer; }
-  .field select:focus { outline: none; border-color: var(--accent-mid); box-shadow: 0 0 0 3px rgba(27,75,138,0.1); }
-  .radio-group, .check-group { display: flex; flex-direction: column; gap: 0.45rem; }
-  .radio-group label, .check-group label { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.875rem; color: var(--text); cursor: pointer; padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); transition: border-color 0.15s, background 0.15s; line-height: 1.4; }
-  .radio-group label:hover, .check-group label:hover { border-color: var(--border-strong); background: #FAFAF8; }
-  .radio-group input, .check-group input { accent-color: var(--accent); margin-top: 2px; flex-shrink: 0; }
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  @media (max-width: 520px) { .two-col { grid-template-columns: 1fr; } }
-  .likert-wrap { overflow-x: auto; }
-  .likert { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; min-width: 320px; }
-  .likert-opt { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 0.6rem 0.3rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); cursor: pointer; transition: border-color 0.15s, background 0.15s; }
-  .likert-opt:hover { border-color: var(--accent-mid); background: var(--accent-light); }
-  .likert-opt input { accent-color: var(--accent); }
-  .likert-opt span { font-size: 0.72rem; color: var(--text-muted); text-align: center; line-height: 1.3; }
-  .likert-num { font-size: 0.9rem; font-weight: 500; color: var(--accent); }
-  .nav-row { display: flex; align-items: center; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }
-  .btn { padding: 0.6rem 1.25rem; border-radius: var(--radius); border: 1.5px solid var(--accent); background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background 0.15s, transform 0.1s; display: inline-flex; align-items: center; gap: 6px; }
-  .btn:hover { background: var(--accent-mid); }
-  .btn:active { transform: scale(0.98); }
-  .btn.secondary { background: var(--surface); color: var(--accent); }
-  .btn.secondary:hover { background: var(--accent-light); }
-  .btn.success-btn { background: var(--success); border-color: var(--success); }
-  .val-msg { font-size: 0.8rem; color: var(--danger); display: none; }
-  .chat-wrap { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
-  .chat-head { padding: 0.875rem 1.125rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.625rem; background: #FAFAF8; }
-  .chat-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  .chat-title { font-size: 0.875rem; font-weight: 500; }
-  .chat-counter { margin-left: auto; font-size: 0.78rem; color: var(--text-muted); }
-  .q-dots { display: flex; gap: 3px; padding: 0 1.125rem 0.625rem; background: #FAFAF8; }
-  .q-dot { height: 3px; flex: 1; border-radius: 2px; background: var(--border); transition: background 0.3s; }
-  .q-dot.done { background: var(--success); }
-  .q-dot.active { background: var(--accent); }
-  #messages { height: 420px; overflow-y: auto; padding: 1.125rem; display: flex; flex-direction: column; gap: 0.75rem; scroll-behavior: smooth; }
-  .msg { max-width: 84%; padding: 0.625rem 0.875rem; border-radius: var(--radius-lg); font-size: 0.875rem; line-height: 1.6; }
-  .msg.ai { background: #F0EDE8; color: var(--text); align-self: flex-start; border-bottom-left-radius: 4px; }
-  .msg.user { background: var(--accent); color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
-  .msg.typing { color: var(--text-hint); font-style: italic; background: #F0EDE8; align-self: flex-start; }
-  .msg.system-note { background: var(--success-light); color: var(--success); align-self: center; font-size: 0.78rem; border-radius: var(--radius); padding: 0.4rem 0.875rem; max-width: 100%; text-align: center; border: 1px solid #A8DBBE; }
-  .chat-input-row { display: flex; gap: 0.5rem; padding: 0.75rem; border-top: 1px solid var(--border); background: #FAFAF8; }
-  #user-input { flex: 1; padding: 0.55rem 0.875rem; border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--surface); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.875rem; resize: none; height: 38px; transition: border-color 0.15s; }
-  #user-input:focus { outline: none; border-color: var(--accent-mid); box-shadow: 0 0 0 3px rgba(27,75,138,0.1); }
-  .tone-badge { display: inline-block; font-size: 0.7rem; padding: 2px 8px; border-radius: 20px; margin-top: 4px; background: #EAF0F9; color: var(--accent); border: 1px solid #C5D8F0; }
-  .export-card { background: var(--success-light); border: 1px solid #A8DBBE; border-radius: var(--radius-lg); padding: 1.5rem; text-align: center; margin-top: 1rem; }
-  .export-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; color: var(--success); margin-bottom: 0.5rem; }
-  .export-card p { font-size: 0.85rem; color: #2D6B4A; margin-bottom: 1rem; }
-  .consent-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 1.5rem; }
-  .consent-box h2 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.875rem; }
-  .consent-box p { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.75rem; line-height: 1.7; }
-  .consent-box ul { font-size: 0.875rem; color: var(--text-muted); padding-left: 1.25rem; margin-bottom: 0.75rem; line-height: 1.8; }
-  .apikey-section { background: #FFF8EC; border: 1px solid #F5D48A; border-radius: var(--radius); padding: 1rem 1.125rem; margin-bottom: 1.5rem; }
-  .apikey-section label { font-size: 0.8rem; font-weight: 500; color: #7A5C10; display: block; margin-bottom: 0.4rem; }
-  .apikey-section input { width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #E8C96A; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; background: white; color: var(--text); }
-  .apikey-section .note { font-size: 0.75rem; color: #9A7520; margin-top: 0.35rem; }
-  .sheets-section { background: #F0FFF8; border: 1px solid #A8DBBE; border-radius: var(--radius); padding: 1rem 1.125rem; margin-bottom: 1.5rem; }
-  .sheets-section label { font-size: 0.8rem; font-weight: 500; color: #1D5C3A; display: block; margin-bottom: 0.4rem; }
-  .sheets-section input { width: 100%; padding: 0.5rem 0.75rem; border: 1px solid #A8DBBE; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; background: white; color: var(--text); }
-  .sheets-section .note { font-size: 0.75rem; color: #2D6B4A; margin-top: 0.35rem; }
-  .save-indicator { font-size: 0.75rem; color: var(--success); display: none; margin-top: 0.5rem; }
-  #transcript-preview { font-size: 0.72rem; color: var(--text-muted); white-space: pre-wrap; line-height: 1.6; max-height: 300px; overflow-y: auto; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0F1923;--ink-mid:#3A4A58;--ink-soft:#6B7D8C;--ink-faint:#A8B8C4;
+  --paper:#F8F6F1;--paper-warm:#EDE9E0;--paper-card:#FFFFFF;
+  --flag:#003580;--flag-mid:#1A5FAB;--flag-light:#D6E4F7;--flag-pale:#EEF4FC;
+  --gold:#C8992A;--gold-light:#FDF3DC;
+  --green:#1A6644;--green-light:#E4F2EB;
+  --red:#B03025;--radius:12px;--radius-lg:20px;
+  --shadow:0 2px 12px rgba(15,25,35,0.08);--shadow-lg:0 8px 32px rgba(15,25,35,0.12);
+}
+body{font-family:'Source Sans 3',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;font-size:15px;line-height:1.65}
+
+/* ── HEADER ── */
+.site-header{background:var(--flag);padding:0;overflow:hidden;position:relative}
+.header-stripe{height:5px;background:linear-gradient(90deg,var(--gold) 0%,#E8B840 50%,var(--gold) 100%)}
+.header-body{padding:2.5rem 2rem 2rem;text-align:center;position:relative}
+.header-body::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.header-eyebrow{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.header-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:600;color:#fff;line-height:1.2;margin-bottom:0.5rem}
+.header-sub{font-size:0.875rem;color:rgba(255,255,255,0.6);font-weight:300;max-width:480px;margin:0 auto}
+
+/* ── PHASE NAV ── */
+.phase-nav{display:flex;background:#0A2540;border-bottom:1px solid rgba(255,255,255,0.06)}
+.phase-nav button{flex:1;padding:0.8rem 0.5rem;background:none;border:none;border-right:1px solid rgba(255,255,255,0.06);color:rgba(255,255,255,0.35);font-family:'Source Sans 3',sans-serif;font-size:0.78rem;font-weight:500;cursor:default;display:flex;align-items:center;justify-content:center;gap:7px;letter-spacing:0.04em;transition:all 0.2s}
+.phase-nav button:last-child{border-right:none}
+.phase-nav button.active{color:#fff;background:rgba(255,255,255,0.08);border-bottom:2px solid var(--gold)}
+.phase-nav button.done{color:#6EC99A}
+.pn-num{width:18px;height:18px;border-radius:50%;background:currentColor;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:var(--flag);opacity:0.8;flex-shrink:0}
+
+/* ── CONTAINER ── */
+.container{max-width:700px;margin:0 auto;padding:2.25rem 1.25rem 5rem}
+
+/* ── CARDS ── */
+.card{background:var(--paper-card);border:1px solid var(--paper-warm);border-radius:var(--radius-lg);padding:1.75rem;margin-bottom:1.25rem;box-shadow:var(--shadow)}
+.card-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:0.75rem}
+
+/* ── CONSENT ── */
+.consent-badge{display:inline-flex;align-items:center;gap:6px;background:var(--flag-pale);color:var(--flag);font-size:0.75rem;font-weight:600;padding:4px 10px;border-radius:20px;margin-bottom:1rem;letter-spacing:0.04em}
+.consent-text{font-size:0.875rem;color:var(--ink-mid);line-height:1.75;margin-bottom:0.875rem}
+.consent-list{font-size:0.875rem;color:var(--ink-mid);padding-left:1.5rem;margin-bottom:0.875rem;line-height:1.9}
+.consent-check-row{display:flex;align-items:flex-start;gap:10px;padding:1rem;background:var(--flag-pale);border:1px solid var(--flag-light);border-radius:var(--radius);margin-bottom:1.25rem;cursor:pointer}
+.consent-check-row input{accent-color:var(--flag);width:16px;height:16px;flex-shrink:0;margin-top:2px}
+.consent-check-row span{font-size:0.875rem;color:var(--ink);font-weight:500;line-height:1.5}
+
+/* ── PROGRESS ── */
+.prog-wrap{margin-bottom:2rem}
+.prog-meta{display:flex;justify-content:space-between;font-size:0.78rem;color:var(--ink-soft);margin-bottom:6px;font-weight:500}
+.prog-track{height:3px;background:var(--paper-warm);border-radius:2px;overflow:hidden}
+.prog-fill{height:3px;background:linear-gradient(90deg,var(--flag),var(--flag-mid));border-radius:2px;transition:width 0.4s ease}
+
+/* ── SECTION INTRO ── */
+.sec-intro{background:var(--flag-pale);border-left:3px solid var(--flag);border-radius:0 var(--radius) var(--radius) 0;padding:0.875rem 1.125rem;margin-bottom:1.5rem;font-size:0.85rem;color:var(--flag-mid);line-height:1.6}
+
+/* ── FIELDS ── */
+.field{margin-bottom:1.5rem}
+.field-label{display:block;font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem;line-height:1.4}
+.field-hint{display:block;font-size:0.8rem;color:var(--ink-soft);margin-bottom:0.625rem;font-style:italic}
+.field select{width:100%;padding:0.65rem 2.5rem 0.65rem 0.875rem;border:1.5px solid var(--paper-warm);border-radius:var(--radius);background:var(--paper-card);color:var(--ink);font-family:'Source Sans 3',sans-serif;font-size:0.875rem;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7D8C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0.875rem center;cursor:pointer;transition:border-color 0.15s}
+.field select:focus{outline:none;border-color:var(--flag-mid);box-shadow:0 0 0 3px rgba(26,95,171,0.12)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:520px){.two-col{grid-template-columns:1fr}}
+.radio-group,.check-group{display:flex;flex-direction:column;gap:0.4rem}
+.radio-group label,.check-group label{display:flex;align-items:flex-start;gap:0.625rem;font-size:0.875rem;color:var(--ink);cursor:pointer;padding:0.55rem 0.875rem;border:1.5px solid var(--paper-warm);border-radius:var(--radius);background:var(--paper-card);transition:all 0.15s;line-height:1.4}
+.radio-group label:hover,.check-group label:hover{border-color:var(--flag-light);background:var(--flag-pale)}
+.radio-group input,.check-group input{accent-color:var(--flag);margin-top:2px;flex-shrink:0}
+.likert-wrap{overflow-x:auto}
+.likert{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;min-width:320px}
+.lo{display:flex;flex-direction:column;align-items:center;gap:5px;padding:0.65rem 0.25rem;border:1.5px solid var(--paper-warm);border-radius:var(--radius);background:var(--paper-card);cursor:pointer;transition:all 0.15s}
+.lo:hover{border-color:var(--flag-light);background:var(--flag-pale)}
+.lo input{accent-color:var(--flag)}
+.lo-num{font-size:1rem;font-weight:600;color:var(--flag)}
+.lo span{font-size:0.7rem;color:var(--ink-soft);text-align:center;line-height:1.3}
+
+/* ── BUTTONS ── */
+.nav-row{display:flex;align-items:center;gap:0.75rem;margin-top:2rem;flex-wrap:wrap}
+.btn{padding:0.65rem 1.375rem;border-radius:var(--radius);border:2px solid var(--flag);background:var(--flag);color:#fff;font-family:'Source Sans 3',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;gap:7px;letter-spacing:0.02em}
+.btn:hover{background:var(--flag-mid);border-color:var(--flag-mid)}
+.btn:active{transform:scale(0.98)}
+.btn.sec{background:transparent;color:var(--flag)}
+.btn.sec:hover{background:var(--flag-pale)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn.gold:hover{background:#B8871F;border-color:#B8871F}
+.btn.grn{background:var(--green);border-color:var(--green)}
+.btn.grn:hover{background:#145535;border-color:#145535}
+.val-msg{font-size:0.8rem;color:var(--red);display:none}
+
+/* ── CHAT ── */
+.chat-shell{border:1.5px solid var(--paper-warm);border-radius:var(--radius-lg);overflow:hidden;background:var(--paper-card);box-shadow:var(--shadow-lg)}
+.chat-head{padding:1rem 1.25rem;border-bottom:1px solid var(--paper-warm);display:flex;align-items:center;gap:0.75rem;background:linear-gradient(135deg,#0A2540,var(--flag))}
+.live-dot{width:9px;height:9px;border-radius:50%;background:#4ADE80;flex-shrink:0;box-shadow:0 0 0 3px rgba(74,222,128,0.25);animation:livepulse 2s infinite}
+@keyframes livepulse{0%,100%{box-shadow:0 0 0 3px rgba(74,222,128,0.25)}50%{box-shadow:0 0 0 6px rgba(74,222,128,0.1)}}
+.chat-head-title{font-size:0.875rem;font-weight:600;color:#fff}
+.chat-head-sub{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-left:auto}
+.q-track{display:flex;gap:3px;padding:0.625rem 1.25rem;background:#F0EDE8;border-bottom:1px solid var(--paper-warm)}
+.q-dot{height:3px;flex:1;border-radius:2px;background:var(--paper-warm);transition:background 0.3s}
+.q-dot.done{background:var(--green)}
+.q-dot.active{background:var(--flag)}
+#messages{height:440px;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:0.875rem;scroll-behavior:smooth;background:var(--paper)}
+.msg{max-width:86%;padding:0.75rem 1rem;border-radius:var(--radius-lg);font-size:0.875rem;line-height:1.65;animation:fadein 0.25s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.msg.ai{background:var(--paper-card);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px;border:1px solid var(--paper-warm);box-shadow:0 1px 4px rgba(15,25,35,0.06)}
+.msg.user{background:var(--flag);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.msg.typing{color:var(--ink-faint);font-style:italic;background:var(--paper-card);align-self:flex-start;border:1px solid var(--paper-warm)}
+.msg.sys{background:var(--green-light);color:var(--green);align-self:center;font-size:0.78rem;border-radius:20px;padding:0.35rem 1rem;max-width:100%;text-align:center;border:1px solid #A8DFC0}
+.tone-pill{display:inline-block;font-size:0.68rem;padding:2px 9px;border-radius:20px;margin-top:5px;background:var(--gold-light);color:#7A5C0A;border:1px solid #E8D080;font-weight:500}
+
+/* ── CHOICE BUBBLES IN CHAT ── */
+.choice-wrap{display:flex;flex-wrap:wrap;gap:7px;margin-top:0.75rem;max-width:86%}
+.choice-btn{padding:0.45rem 0.875rem;border-radius:20px;border:1.5px solid var(--flag-light);background:var(--flag-pale);color:var(--flag);font-family:'Source Sans 3',sans-serif;font-size:0.8rem;font-weight:500;cursor:pointer;transition:all 0.15s}
+.choice-btn:hover{background:var(--flag);color:#fff;border-color:var(--flag)}
+
+/* ── INPUT ROW ── */
+.input-row{display:flex;gap:0.5rem;padding:0.875rem;border-top:1px solid var(--paper-warm);background:var(--paper)}
+#user-input{flex:1;padding:0.6rem 0.875rem;border:1.5px solid var(--paper-warm);border-radius:var(--radius);background:var(--paper-card);color:var(--ink);font-family:'Source Sans 3',sans-serif;font-size:0.875rem;resize:none;height:40px;transition:border-color 0.15s}
+#user-input:focus{outline:none;border-color:var(--flag-mid);box-shadow:0 0 0 3px rgba(26,95,171,0.1)}
+.save-note{font-size:0.75rem;color:var(--green);margin-top:0.5rem;display:none}
+
+/* ── EXPORT ── */
+.export-hero{background:linear-gradient(135deg,var(--green),#1D8050);border-radius:var(--radius-lg);padding:2rem;text-align:center;color:#fff;margin-bottom:1.25rem}
+.export-hero h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;margin-bottom:0.5rem}
+.export-hero p{font-size:0.875rem;opacity:0.85;margin-bottom:1.25rem}
+.transcript-box{background:var(--paper-card);border:1px solid var(--paper-warm);border-radius:var(--radius);padding:1.125rem;margin-top:1rem}
+.transcript-box pre{font-size:0.72rem;color:var(--ink-soft);white-space:pre-wrap;line-height:1.6;max-height:320px;overflow-y:auto}
 </style>
 </head>
 <body>
 
-<div class="page-header">
-  <h1>NATO Economic Perceptions Study</h1>
-  <p>An LLM-Augmented Study in Finland — University Research Questionnaire &amp; Interview</p>
+<div class="site-header">
+  <div class="header-stripe"></div>
+  <div class="header-body">
+    <div class="header-eyebrow">University Research Study · Finland · 2026</div>
+    <h1 class="header-title">NATO Economic Perceptions Study</h1>
+    <p class="header-sub">An LLM-Augmented Qualitative Study on the Perceived Economic &amp; Financial Outcomes of Possible US Disengagement from NATO</p>
+  </div>
 </div>
 
 <div class="phase-nav">
-  <button id="tab0" class="active"><span class="phase-dot"></span> Consent</button>
-  <button id="tab1"><span class="phase-dot"></span> Questionnaire</button>
-  <button id="tab2"><span class="phase-dot"></span> AI Interview</button>
-  <button id="tab3"><span class="phase-dot"></span> Export</button>
+  <button id="tab0" class="active"><span class="pn-num">1</span> Consent</button>
+  <button id="tab1"><span class="pn-num">2</span> Background</button>
+  <button id="tab2"><span class="pn-num">3</span> AI Interview</button>
+  <button id="tab3"><span class="pn-num">4</span> Export</button>
 </div>
 
 <div class="container">
 
-  <!-- CONSENT -->
+  <!-- ══ PHASE 0 — CONSENT ══ -->
   <div id="phase0">
-    <div class="apikey-section">
-      <label>Anthropic API Key (powers the AI interview)</label>
-      <input type="password" id="api-key" placeholder="sk-ant-…" autocomplete="off" value="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">
-      <p class="note">Your key is used only in your browser and is never stored or shared. Get one at console.anthropic.com.</p>
-    </div>
-    <div class="sheets-section">
-      <label>Google Sheets Web App URL (for automatic transcript saving)</label>
-      <input type="text" id="sheets-url" placeholder="https://script.google.com/macros/s/…/exec" value="https://script.google.com/macros/s/AKfycbz0imyX41RM7Yj--5DqaLRkRngswj6vkci8hBjRQUqdkV9wG3HLWVpxIi6U0b4M0vn0tg/exec">
-      <p class="note">Paste your Google Apps Script deployment URL here. Transcripts save automatically after each interview.</p>
-    </div>
-    <div class="consent-box">
-      <h2>Participant Information &amp; Consent</h2>
-      <p>You are invited to participate in an academic research study examining how people in Finland perceive the possible economic and financial consequences of a US withdrawal from NATO.</p>
-      <p>The study involves two parts:</p>
-      <ul>
-        <li>A structured questionnaire covering background, economic, financial, and geopolitical perceptions (approx. 5–8 minutes)</li>
-        <li>A follow-up AI-conducted interview exploring your views in more depth (approx. 8–12 minutes)</li>
+    <div class="card">
+      <div class="consent-badge">&#128196; Participant Information Sheet</div>
+      <h2 class="card-title">Welcome &amp; Consent</h2>
+      <p class="consent-text">You are invited to take part in an academic research study examining how people in Finland perceive the possible economic and financial consequences of a US withdrawal from NATO. The study is anonymous, voluntary, and takes approximately <strong>15–20 minutes</strong>.</p>
+      <p class="consent-text">The study has two parts:</p>
+      <ul class="consent-list">
+        <li>A short background questionnaire (approx. 3 minutes)</li>
+        <li>An AI-conducted interview covering economic, financial, and geopolitical perceptions — with both structured choice questions and open reflections (approx. 12–17 minutes)</li>
       </ul>
-      <p><strong>Your participation is entirely voluntary.</strong> All responses are anonymous. No personal identifying information is collected. You may stop at any time without consequence.</p>
-      <p>This study is conducted at [Your University Name]. For questions please contact: [researcher@university.fi]</p>
+      <p class="consent-text"><strong>Your responses are completely anonymous.</strong> No names, email addresses, or identifying information are collected. You may stop at any time without consequence. Responses are saved automatically to a secure research database.</p>
+      <p class="consent-text">This study is conducted at <strong>[Your University Name]</strong>. For questions please contact: <strong>[researcher@university.fi]</strong></p>
     </div>
-    <label style="display:flex;align-items:flex-start;gap:10px;font-size:0.875rem;cursor:pointer;margin-bottom:1.5rem">
-      <input type="checkbox" id="consent-check" style="accent-color:var(--accent);margin-top:3px;flex-shrink:0">
-      I have read the information above and I voluntarily consent to participate in this study.
+    <label class="consent-check-row">
+      <input type="checkbox" id="consent-check">
+      <span>I have read the information above and I voluntarily consent to participate in this anonymous research study.</span>
     </label>
-    <button class="btn" onclick="startQuestionnaire()">Begin questionnaire →</button>
-    <p id="consent-err" style="font-size:0.8rem;color:var(--danger);margin-top:0.5rem;display:none">Please tick the consent box and enter your API key to continue.</p>
+    <button class="btn" onclick="startBackground()">Begin study &#8594;</button>
+    <p id="consent-err" style="font-size:0.8rem;color:var(--red);margin-top:0.625rem;display:none">Please tick the consent box to continue.</p>
   </div>
 
-  <!-- QUESTIONNAIRE -->
+  <!-- ══ PHASE 1 — BACKGROUND ══ -->
   <div id="phase1" style="display:none">
-    <div class="progress-bar-wrap">
-      <div class="progress-meta">
-        <span id="sec-label">Section A — Background</span>
-        <span id="sec-count">1 / 4</span>
-      </div>
-      <div class="progress-track"><div class="progress-fill" id="prog-fill" style="width:25%"></div></div>
+    <div class="prog-wrap">
+      <div class="prog-meta"><span>Background Information</span><span>Step 1 of 2</span></div>
+      <div class="prog-track"><div class="prog-fill" style="width:50%"></div></div>
     </div>
-
-    <!-- SEC A -->
-    <div id="sec-a">
-      <div class="section-intro">Please answer all questions honestly. All information is completely anonymous and used for research purposes only.</div>
-      <div class="two-col">
-        <div class="field"><label class="field-label">A1. Nationality</label>
-          <select id="nationality"><option value="">Select…</option><option>Finnish</option><option>Swedish</option><option>Norwegian</option><option>Estonian</option><option>Other EU</option><option>Non-EU</option></select></div>
-        <div class="field"><label class="field-label">A2. Age group</label>
-          <select id="age"><option value="">Select…</option><option>18–24</option><option>25–34</option><option>35–44</option><option>45–54</option><option>55–64</option><option>65+</option></select></div>
-      </div>
-      <div class="two-col">
-        <div class="field"><label class="field-label">A3. Gender</label>
-          <div class="radio-group">
-            <label><input type="radio" name="gender" value="Male"> Male</label>
-            <label><input type="radio" name="gender" value="Female"> Female</label>
-            <label><input type="radio" name="gender" value="Non-binary"> Non-binary</label>
-            <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
-          </div></div>
-        <div class="field"><label class="field-label">A4. Highest education</label>
-          <select id="education"><option value="">Select…</option><option>Primary / comprehensive</option><option>Upper secondary / vocational</option><option>Bachelor's degree</option><option>Master's degree</option><option>Doctoral degree</option></select></div>
-      </div>
-      <div class="field"><label class="field-label">A5. Region / city of residence</label>
-        <select id="region"><option value="">Select…</option><option>Helsinki-Uusimaa</option><option>Pirkanmaa</option><option>Southwest Finland</option><option>North Savo</option><option>North Karelia</option><option>South Karelia</option><option>Kymenlaakso</option><option>South Savo</option><option>Lapland</option><option>Other</option></select></div>
-      <div class="field"><label class="field-label">A6. Do you live in a border or near-border district?</label>
-        <div class="radio-group" style="flex-direction:row;gap:0.5rem;flex-wrap:wrap">
-          <label style="flex:1;min-width:100px"><input type="radio" name="border" value="Yes"> Yes</label>
-          <label style="flex:1;min-width:100px"><input type="radio" name="border" value="No"> No</label>
-          <label style="flex:1;min-width:100px"><input type="radio" name="border" value="Unsure"> Unsure</label>
-        </div></div>
+    <div class="sec-intro">Please answer all six questions below. This information helps us understand the diversity of perspectives in the study. All responses are anonymous.</div>
+    <div class="two-col">
+      <div class="field"><label class="field-label">1. Nationality</label>
+        <select id="nationality"><option value="">Select…</option><option>Finnish</option><option>Swedish</option><option>Norwegian</option><option>Estonian</option><option>Other EU</option><option>Non-EU</option></select></div>
+      <div class="field"><label class="field-label">2. Age group</label>
+        <select id="age"><option value="">Select…</option><option>18–24</option><option>25–34</option><option>35–44</option><option>45–54</option><option>55–64</option><option>65+</option></select></div>
     </div>
-
-    <!-- SEC B -->
-    <div id="sec-b" style="display:none">
-      <div class="section-intro">These questions explore your perceptions of economic impacts if the US were to reduce or withdraw its NATO commitment.</div>
-      <div class="field"><label class="field-label">B1. How do you expect Finnish government defence spending to change if the US reduced its NATO commitment?</label>
+    <div class="two-col">
+      <div class="field"><label class="field-label">3. Gender</label>
         <div class="radio-group">
-          <label><input type="radio" name="govspend" value="Increase significantly"> Increase significantly</label>
-          <label><input type="radio" name="govspend" value="Increase somewhat"> Increase somewhat</label>
-          <label><input type="radio" name="govspend" value="Stay the same"> Stay the same</label>
-          <label><input type="radio" name="govspend" value="Decrease somewhat"> Decrease somewhat</label>
-          <label><input type="radio" name="govspend" value="Don't know"> Don't know</label>
+          <label><input type="radio" name="gender" value="Male"> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Non-binary"> Non-binary</label>
+          <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
         </div></div>
-      <div class="field"><label class="field-label">B2. How concerned are you that a US NATO withdrawal would affect your personal income or household finances?</label>
-        <span class="field-hint">1 = Not at all concerned → 5 = Extremely concerned</span>
-        <div class="likert-wrap"><div class="likert">
-          <div class="likert-opt"><input type="radio" name="persincome" value="1"><span class="likert-num">1</span><span>Not at all</span></div>
-          <div class="likert-opt"><input type="radio" name="persincome" value="2"><span class="likert-num">2</span><span>Slightly</span></div>
-          <div class="likert-opt"><input type="radio" name="persincome" value="3"><span class="likert-num">3</span><span>Moderately</span></div>
-          <div class="likert-opt"><input type="radio" name="persincome" value="4"><span class="likert-num">4</span><span>Very</span></div>
-          <div class="likert-opt"><input type="radio" name="persincome" value="5"><span class="likert-num">5</span><span>Extremely</span></div>
-        </div></div></div>
-      <div class="field"><label class="field-label">B3. Which employment sectors do you think are most at risk? (Select all that apply)</label>
-        <div class="check-group">
-          <label><input type="checkbox" value="Defence industry"> Defence and security industry</label>
-          <label><input type="checkbox" value="Export manufacturing"> Export manufacturing</label>
-          <label><input type="checkbox" value="Technology"> Technology and R&amp;D</label>
-          <label><input type="checkbox" value="Finance"> Financial services</label>
-          <label><input type="checkbox" value="Tourism"> Tourism and services</label>
-          <label><input type="checkbox" value="Agriculture"> Agriculture and forestry</label>
-          <label><input type="checkbox" value="None"> None — no significant employment impact</label>
-        </div></div>
-      <div class="field"><label class="field-label">B4. Do you think reduced US NATO commitment would raise inflation in Finland?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="inflation" value="Yes, significantly"> Yes, significantly</label>
-          <label><input type="radio" name="inflation" value="Yes, somewhat"> Yes, somewhat</label>
-          <label><input type="radio" name="inflation" value="No change expected"> No change expected</label>
-          <label><input type="radio" name="inflation" value="It might lower inflation"> It might lower inflation</label>
-          <label><input type="radio" name="inflation" value="Don't know"> Don't know</label>
-        </div></div>
-      <div class="field"><label class="field-label">B5. How likely is it that foreign investment would leave Finland if the US significantly reduced its NATO role?</label>
-        <span class="field-hint">1 = Very unlikely → 5 = Very likely</span>
-        <div class="likert-wrap"><div class="likert">
-          <div class="likert-opt"><input type="radio" name="capflow" value="1"><span class="likert-num">1</span><span>Very unlikely</span></div>
-          <div class="likert-opt"><input type="radio" name="capflow" value="2"><span class="likert-num">2</span><span>Unlikely</span></div>
-          <div class="likert-opt"><input type="radio" name="capflow" value="3"><span class="likert-num">3</span><span>Neutral</span></div>
-          <div class="likert-opt"><input type="radio" name="capflow" value="4"><span class="likert-num">4</span><span>Likely</span></div>
-          <div class="likert-opt"><input type="radio" name="capflow" value="5"><span class="likert-num">5</span><span>Very likely</span></div>
-        </div></div></div>
-      <div class="field"><label class="field-label">B6. Which trade relationships concern you most? (Select all that apply)</label>
-        <div class="check-group">
-          <label><input type="checkbox" value="US bilateral trade"> Direct US–Finland bilateral trade</label>
-          <label><input type="checkbox" value="EU trade stability"> EU single market stability</label>
-          <label><input type="checkbox" value="Nordic cooperation"> Nordic economic cooperation</label>
-          <label><input type="checkbox" value="Russia sanctions"> Sanctions and Russia-related trade risks</label>
-          <label><input type="checkbox" value="Global supply chains"> Global supply chain disruption</label>
-          <label><input type="checkbox" value="None"> No significant trade concern</label>
-        </div></div>
-      <div class="field"><label class="field-label">B7. How much does Finland's economic stability depend on continued US commitment to NATO?</label>
-        <span class="field-hint">1 = Not at all dependent → 5 = Entirely dependent</span>
-        <div class="likert-wrap"><div class="likert">
-          <div class="likert-opt"><input type="radio" name="overallstab" value="1"><span class="likert-num">1</span><span>Not at all</span></div>
-          <div class="likert-opt"><input type="radio" name="overallstab" value="2"><span class="likert-num">2</span><span>Slightly</span></div>
-          <div class="likert-opt"><input type="radio" name="overallstab" value="3"><span class="likert-num">3</span><span>Moderately</span></div>
-          <div class="likert-opt"><input type="radio" name="overallstab" value="4"><span class="likert-num">4</span><span>Strongly</span></div>
-          <div class="likert-opt"><input type="radio" name="overallstab" value="5"><span class="likert-num">5</span><span>Entirely</span></div>
-        </div></div></div>
+      <div class="field"><label class="field-label">4. Highest education</label>
+        <select id="education"><option value="">Select…</option><option>Primary / comprehensive</option><option>Upper secondary / vocational</option><option>Bachelor's degree</option><option>Master's degree</option><option>Doctoral degree</option></select></div>
     </div>
-
-    <!-- SEC C -->
-    <div id="sec-c" style="display:none">
-      <div class="section-intro">These questions focus on your perceptions of how Finnish financial markets and institutions might be affected.</div>
-      <div class="field"><label class="field-label">C1. How do you think Finnish financial markets (stocks, bonds, currency) would react short-term to a US NATO withdrawal?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="mktreact" value="Sharp decline"> Sharp decline — significant sell-off</label>
-          <label><input type="radio" name="mktreact" value="Mild decline"> Mild decline — some nervousness</label>
-          <label><input type="radio" name="mktreact" value="No meaningful change"> No meaningful change</label>
-          <label><input type="radio" name="mktreact" value="Markets recover quickly"> Markets would adjust quickly and recover</label>
-          <label><input type="radio" name="mktreact" value="Don't know"> Don't know</label>
-        </div></div>
-      <div class="field"><label class="field-label">C2. If there were a financial market shock, how long do you think it would last?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="mktdur" value="Days"> Days — short-term panic</label>
-          <label><input type="radio" name="mktdur" value="Weeks to months"> Weeks to months</label>
-          <label><input type="radio" name="mktdur" value="Years"> Years — structural shift</label>
-          <label><input type="radio" name="mktdur" value="Permanent"> Permanent change in Finland's risk profile</label>
-          <label><input type="radio" name="mktdur" value="Don't know"> Don't know</label>
-        </div></div>
-      <div class="field"><label class="field-label">C3. How do you think foreign direct investment (FDI) into Finland would change after a US NATO withdrawal?</label>
-        <span class="field-hint">1 = Fall sharply → 5 = Rise significantly</span>
-        <div class="likert-wrap"><div class="likert">
-          <div class="likert-opt"><input type="radio" name="fdi" value="1"><span class="likert-num">1</span><span>Fall sharply</span></div>
-          <div class="likert-opt"><input type="radio" name="fdi" value="2"><span class="likert-num">2</span><span>Fall somewhat</span></div>
-          <div class="likert-opt"><input type="radio" name="fdi" value="3"><span class="likert-num">3</span><span>No change</span></div>
-          <div class="likert-opt"><input type="radio" name="fdi" value="4"><span class="likert-num">4</span><span>Rise somewhat</span></div>
-          <div class="likert-opt"><input type="radio" name="fdi" value="5"><span class="likert-num">5</span><span>Rise significantly</span></div>
-        </div></div></div>
-      <div class="field"><label class="field-label">C4. How confident are you that Finland's macro-financial system (public debt, credit ratings, monetary policy) could stay stable without US NATO backing?</label>
-        <span class="field-hint">1 = Not confident at all → 5 = Very confident</span>
-        <div class="likert-wrap"><div class="likert">
-          <div class="likert-opt"><input type="radio" name="macro" value="1"><span class="likert-num">1</span><span>Not at all</span></div>
-          <div class="likert-opt"><input type="radio" name="macro" value="2"><span class="likert-num">2</span><span>Slightly</span></div>
-          <div class="likert-opt"><input type="radio" name="macro" value="3"><span class="likert-num">3</span><span>Moderately</span></div>
-          <div class="likert-opt"><input type="radio" name="macro" value="4"><span class="likert-num">4</span><span>Quite</span></div>
-          <div class="likert-opt"><input type="radio" name="macro" value="5"><span class="likert-num">5</span><span>Very confident</span></div>
-        </div></div></div>
-      <div class="field"><label class="field-label">C5. Could a US NATO withdrawal trigger a bank run or loss of public confidence in Finnish banks?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="bankrun" value="Very likely"> Very likely</label>
-          <label><input type="radio" name="bankrun" value="Somewhat likely"> Somewhat likely</label>
-          <label><input type="radio" name="bankrun" value="Unlikely"> Unlikely — Finnish banks are resilient</label>
-          <label><input type="radio" name="bankrun" value="Very unlikely"> Very unlikely</label>
-          <label><input type="radio" name="bankrun" value="Don't know"> Don't know</label>
-        </div></div>
-      <div class="field"><label class="field-label">C6. Which financial areas concern you most? (Select all that apply)</label>
-        <div class="check-group">
-          <label><input type="checkbox" value="Stock market"> Stock market volatility</label>
-          <label><input type="checkbox" value="Currency"> Euro / exchange rate pressure</label>
-          <label><input type="checkbox" value="Government bonds"> Finnish government bonds / sovereign risk</label>
-          <label><input type="checkbox" value="Banking sector"> Banking sector stability</label>
-          <label><input type="checkbox" value="Pension funds"> Pension funds and long-term savings</label>
-          <label><input type="checkbox" value="Insurance"> Insurance and risk markets</label>
-          <label><input type="checkbox" value="None"> None — no significant financial risk</label>
-        </div></div>
-    </div>
-
-    <!-- SEC D -->
-    <div id="sec-d" style="display:none">
-      <div class="section-intro">These final questions relate to your views on US–NATO relations and Finland's geopolitical outlook.</div>
-      <div class="field"><label class="field-label">D1. Do you think the US is maintaining a good relationship with other NATO countries, especially under the Trump administration?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="usrel" value="Strongly yes"> Strongly yes — the relationship remains solid</label>
-          <label><input type="radio" name="usrel" value="Somewhat yes"> Somewhat yes — relations are strained but intact</label>
-          <label><input type="radio" name="usrel" value="Neutral"> Neutral / don't know</label>
-          <label><input type="radio" name="usrel" value="Somewhat no"> Somewhat no — relations have deteriorated noticeably</label>
-          <label><input type="radio" name="usrel" value="Strongly no"> Strongly no — the alliance is seriously undermined</label>
-        </div></div>
-      <div class="field"><label class="field-label">D2. Do you think the US will disengage from NATO in the near future?</label>
-        <div class="radio-group">
-          <label><input type="radio" name="disengage" value="Definitely yes"> Definitely yes</label>
-          <label><input type="radio" name="disengage" value="Probably yes"> Probably yes</label>
-          <label><input type="radio" name="disengage" value="Unsure"> Unsure</label>
-          <label><input type="radio" name="disengage" value="Probably no"> Probably no</label>
-          <label><input type="radio" name="disengage" value="Definitely no"> Definitely no</label>
-        </div></div>
-      <div class="field"><label class="field-label">D3. If US disengagement occurred, what should Finland do? (Select all that apply)</label>
-        <div class="check-group">
-          <label><input type="checkbox" value="Increase defence spending"> Increase defence spending significantly</label>
-          <label><input type="checkbox" value="Strengthen Nordic ties"> Strengthen Nordic and EU defence cooperation</label>
-          <label><input type="checkbox" value="Bilateral US agreement"> Seek a bilateral security agreement with the US</label>
-          <label><input type="checkbox" value="EU army"> Support creation of a European defence force</label>
-          <label><input type="checkbox" value="Diplomacy with Russia"> Pursue diplomatic channels with Russia</label>
-          <label><input type="checkbox" value="No action needed"> No special action needed — Finland can manage</label>
-        </div></div>
-    </div>
-
+    <div class="field"><label class="field-label">5. Region / city of residence</label>
+      <select id="region"><option value="">Select…</option><option>Helsinki-Uusimaa</option><option>Pirkanmaa</option><option>Southwest Finland</option><option>North Savo</option><option>North Karelia</option><option>South Karelia</option><option>Kymenlaakso</option><option>South Savo</option><option>Lapland</option><option>Other</option></select></div>
+    <div class="field"><label class="field-label">6. Do you live in a border or near-border district?</label>
+      <div class="radio-group" style="flex-direction:row;gap:0.5rem;flex-wrap:wrap">
+        <label style="flex:1;min-width:110px"><input type="radio" name="border" value="Yes"> Yes</label>
+        <label style="flex:1;min-width:110px"><input type="radio" name="border" value="No"> No</label>
+        <label style="flex:1;min-width:110px"><input type="radio" name="border" value="Unsure"> Unsure</label>
+      </div></div>
     <div class="nav-row">
-      <button class="btn secondary" id="prev-btn" onclick="prevSec()" style="display:none">← Back</button>
-      <button class="btn" id="next-btn" onclick="nextSec()">Next →</button>
-      <span class="val-msg" id="val-msg">Please answer all required questions before continuing.</span>
+      <button class="btn" onclick="startInterview()">Continue to interview &#8594;</button>
+      <span class="val-msg" id="bg-val">Please answer all questions before continuing.</span>
     </div>
   </div>
 
-  <!-- AI INTERVIEW -->
+  <!-- ══ PHASE 2 — AI INTERVIEW ══ -->
   <div id="phase2" style="display:none">
-    <div class="section-intro" style="margin-bottom:1rem">
-      <strong>Welcome to the interview phase.</strong> An AI researcher will now ask you a series of open questions based on your questionnaire responses. There are no right or wrong answers — please share your genuine views as openly as you like. The conversation will cover themes including trade, investment, financial markets, and Finland's geopolitical position. Your responses will be recorded anonymously for research analysis.
+    <div class="prog-wrap">
+      <div class="prog-meta"><span>AI Research Interview</span><span>Step 2 of 2</span></div>
+      <div class="prog-track"><div class="prog-fill" style="width:100%"></div></div>
     </div>
-    <div class="chat-wrap">
+    <div class="sec-intro" style="margin-bottom:1rem">
+      <strong>Welcome to the interview.</strong> The AI researcher will now guide you through a series of questions on economic, financial, and geopolitical perceptions. Some questions offer clickable options — simply click one to respond. Others invite your own words. There are no right or wrong answers. Please be as open as you like.
+    </div>
+    <div class="chat-shell">
       <div class="chat-head">
-        <div class="chat-dot"></div>
-        <span class="chat-title">AI Research Interview — NATO &amp; Finland's Economy</span>
-        <span class="chat-counter" id="chat-qcount">Question 1 of 8</span>
+        <div class="live-dot"></div>
+        <span class="chat-head-title">AI Research Interview — NATO &amp; Finland's Economy</span>
+        <span class="chat-head-sub" id="q-counter">Connecting…</span>
       </div>
-      <div class="q-dots" id="qdots"></div>
+      <div class="q-track" id="qdots"></div>
       <div id="messages"></div>
-      <div class="chat-input-row">
+      <div class="input-row">
         <textarea id="user-input" placeholder="Type your response and press Enter…"></textarea>
         <button class="btn" id="send-btn" onclick="sendMsg()">Send</button>
       </div>
     </div>
-    <p class="save-indicator" id="save-indicator">✓ Response saved to research database</p>
-    <button class="btn secondary" onclick="goExport()" style="margin-top:1rem">Finish &amp; export →</button>
+    <p class="save-note" id="save-note">&#10003; Response saved to research database</p>
+    <div style="margin-top:1rem;display:flex;gap:0.75rem;flex-wrap:wrap">
+      <button class="btn sec" onclick="goExport()">Finish &amp; export &#8594;</button>
+    </div>
   </div>
 
-  <!-- EXPORT -->
+  <!-- ══ PHASE 3 — EXPORT ══ -->
   <div id="phase3" style="display:none">
-    <div class="export-card">
-      <h3>Interview complete — thank you!</h3>
-      <p>Your responses have been automatically saved to the research database. Please also copy the transcript below and send it to your researcher if requested.</p>
-      <button class="btn success-btn" onclick="copyTranscript()">Copy full transcript</button>
+    <div class="export-hero">
+      <h2>Thank you for participating</h2>
+      <p>Your responses have been saved to the research database. You may also copy the full transcript below for your own records or to send directly to the researcher.</p>
+      <button class="btn gold" onclick="copyTranscript()">&#128203; Copy full transcript</button>
     </div>
-    <div style="margin-top:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem">
-      <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:0.5rem;font-weight:500">TRANSCRIPT PREVIEW (includes tone tags)</p>
-      <pre id="transcript-preview"></pre>
+    <div class="transcript-box">
+      <p style="font-size:0.78rem;font-weight:600;color:var(--ink-soft);margin-bottom:0.625rem;letter-spacing:0.05em;text-transform:uppercase">Transcript preview — includes tone analysis tags</p>
+      <pre id="preview"></pre>
     </div>
   </div>
 
-</div>
+</div><!-- /container -->
 
 <script>
-const TOTAL_Q = 8;
-let chatHistory = [];
-let qIndex = 0;
-let qResponses = {};
-let currentSec = 0;
-let toneTags = [];
-const sections = ['sec-a','sec-b','sec-c','sec-d'];
-const secNames = ['Section A — Background','Section B — Economic','Section C — Financial','Section D — Geopolitical'];
+// ── CONFIG ──────────────────────────────────────────────────────────────────
+const PROXY_URL = 'https://YOUR-WORKER-NAME.YOUR-USERNAME.workers.dev';
+const SHEETS_URL = 'YOUR-GOOGLE-SHEETS-APPS-SCRIPT-URL';
+const TOTAL_Q = 18;
 
-function setTab(active) {
-  ['tab0','tab1','tab2','tab3'].forEach((id,i) => {
-    document.getElementById(id).className = i < active ? 'done' : i === active ? 'active' : '';
+// ── STATE ───────────────────────────────────────────────────────────────────
+let bgData = {};
+let chatHistory = [];
+let qIdx = 0;
+let toneTags = [];
+let awaitingChoice = false;
+
+// ── TAB HELPER ──────────────────────────────────────────────────────────────
+function setTab(n){
+  ['tab0','tab1','tab2','tab3'].forEach((id,i)=>{
+    const el=document.getElementById(id);
+    el.className=i<n?'done':i===n?'active':'';
   });
 }
 
-function startQuestionnaire() {
-  const key = document.getElementById('api-key').value.trim();
-  if (!document.getElementById('consent-check').checked || !key) {
-    document.getElementById('consent-err').style.display = 'block'; return;
+// ── PHASE 0 → 1 ─────────────────────────────────────────────────────────────
+function startBackground(){
+  if(!document.getElementById('consent-check').checked){
+    document.getElementById('consent-err').style.display='block'; return;
   }
-  document.getElementById('consent-err').style.display = 'none';
-  document.getElementById('phase0').style.display = 'none';
-  document.getElementById('phase1').style.display = 'block';
+  document.getElementById('consent-err').style.display='none';
+  document.getElementById('phase0').style.display='none';
+  document.getElementById('phase1').style.display='block';
   setTab(1); window.scrollTo(0,0);
 }
 
-function collectSec(s) {
-  const el = document.getElementById(sections[s]);
-  for (const sel of el.querySelectorAll('select')) { if (!sel.value) return false; }
-  const names = [...new Set([...el.querySelectorAll('input[type=radio]')].map(r=>r.name))];
-  for (const n of names) { if (!el.querySelector(`input[name="${n}"]:checked`)) return false; }
+// ── PHASE 1 VALIDATION ──────────────────────────────────────────────────────
+function validateBg(){
+  const sels=['nationality','age','education','region'];
+  for(const s of sels){ if(!document.getElementById(s).value) return false; }
+  const radios=['gender','border'];
+  for(const r of radios){ if(!document.querySelector(`input[name="${r}"]:checked`)) return false; }
   return true;
 }
 
-function getFormData() {
-  const r = n => { const c = document.querySelector(`input[name="${n}"]:checked`); return c ? c.value : '—'; };
-  const boxes = vals => [...document.querySelectorAll('.check-group input[type=checkbox]:checked')].filter(c=>vals.includes(c.value)).map(c=>c.value).join('; ') || '—';
-  return {
-    nationality: document.getElementById('nationality').value,
-    age: document.getElementById('age').value,
-    gender: r('gender'), education: document.getElementById('education').value,
-    region: document.getElementById('region').value, border_district: r('border'),
-    gov_spending: r('govspend'), personal_income_concern: r('persincome'),
-    employment_sectors: boxes(['Defence industry','Export manufacturing','Technology','Finance','Tourism','Agriculture','None']),
-    inflation: r('inflation'), capital_flow: r('capflow'),
-    trade_concerns: boxes(['US bilateral trade','EU trade stability','Nordic cooperation','Russia sanctions','Global supply chains','None']),
-    overall_stability: r('overallstab'),
-    market_reaction: r('mktreact'), market_duration: r('mktdur'),
-    fdi_outlook: r('fdi'), macro_confidence: r('macro'), bank_run_risk: r('bankrun'),
-    financial_sectors: boxes(['Stock market','Currency','Government bonds','Banking sector','Pension funds','Insurance','None']),
-    us_nato_relations: r('usrel'), us_disengagement: r('disengage'),
-    finland_response: boxes(['Increase defence spending','Strengthen Nordic ties','Bilateral US agreement','EU army','Diplomacy with Russia','No action needed'])
+function getBgData(){
+  const r=n=>{const c=document.querySelector(`input[name="${n}"]:checked`);return c?c.value:'—';};
+  return{
+    nationality:document.getElementById('nationality').value,
+    age:document.getElementById('age').value,
+    gender:r('gender'),
+    education:document.getElementById('education').value,
+    region:document.getElementById('region').value,
+    border_district:r('border')
   };
 }
 
-function nextSec() {
-  const vm = document.getElementById('val-msg');
-  if (!collectSec(currentSec)) { vm.style.display='inline'; return; }
-  vm.style.display = 'none';
-  document.getElementById(sections[currentSec]).style.display = 'none';
-  currentSec++;
-  if (currentSec >= sections.length) { startInterview(); return; }
-  document.getElementById(sections[currentSec]).style.display = 'block';
-  document.getElementById('sec-label').textContent = secNames[currentSec];
-  document.getElementById('sec-count').textContent = (currentSec+1) + ' / 4';
-  document.getElementById('prog-fill').style.width = ((currentSec+1)/4*100) + '%';
-  document.getElementById('prev-btn').style.display = 'inline-flex';
-  window.scrollTo(0,0);
-}
-
-function prevSec() {
-  document.getElementById(sections[currentSec]).style.display = 'none';
-  currentSec--;
-  document.getElementById(sections[currentSec]).style.display = 'block';
-  document.getElementById('sec-label').textContent = secNames[currentSec];
-  document.getElementById('sec-count').textContent = (currentSec+1) + ' / 4';
-  document.getElementById('prog-fill').style.width = ((currentSec+1)/4*100) + '%';
-  document.getElementById('prev-btn').style.display = currentSec > 0 ? 'inline-flex' : 'none';
-}
-
-function startInterview() {
-  qResponses = getFormData();
-  document.getElementById('phase1').style.display = 'none';
-  document.getElementById('phase2').style.display = 'block';
+// ── PHASE 1 → 2 ─────────────────────────────────────────────────────────────
+function startInterview(){
+  if(!validateBg()){
+    document.getElementById('bg-val').style.display='inline'; return;
+  }
+  document.getElementById('bg-val').style.display='none';
+  bgData=getBgData();
+  document.getElementById('phase1').style.display='none';
+  document.getElementById('phase2').style.display='block';
   setTab(2); buildQdots(); initChat(); window.scrollTo(0,0);
 }
 
-function buildQdots() {
-  const p = document.getElementById('qdots'); p.innerHTML = '';
-  for (let i=0;i<TOTAL_Q;i++) {
-    const d=document.createElement('div'); d.className='q-dot'; d.id='qd'+i; p.appendChild(d);
+// ── Q DOTS ──────────────────────────────────────────────────────────────────
+function buildQdots(){
+  const p=document.getElementById('qdots'); p.innerHTML='';
+  for(let i=0;i<TOTAL_Q;i++){
+    const d=document.createElement('div');d.className='q-dot';d.id='qd'+i;p.appendChild(d);
   }
   updateQdots();
 }
-
-function updateQdots() {
-  for (let i=0;i<TOTAL_Q;i++) {
-    const d=document.getElementById('qd'+i); if(!d) continue;
-    d.className='q-dot'+(i<qIndex?' done':i===qIndex?' active':'');
+function updateQdots(){
+  for(let i=0;i<TOTAL_Q;i++){
+    const d=document.getElementById('qd'+i);if(!d)continue;
+    d.className='q-dot'+(i<qIdx?' done':i===qIdx?' active':'');
   }
-  document.getElementById('chat-qcount').textContent='Question '+(Math.min(qIndex+1,TOTAL_Q))+' of '+TOTAL_Q;
+  document.getElementById('q-counter').textContent='Question '+(Math.min(qIdx+1,TOTAL_Q))+' of '+TOTAL_Q;
 }
 
-const SYSTEM_PROMPT = data => `You are a warm, academic AI researcher conducting a qualitative interview for a study: "The Perceived Economic and Financial Outcomes of Possible US Disengagement from NATO: An LLM-Augmented Study in Finland."
+// ── SYSTEM PROMPT ────────────────────────────────────────────────────────────
+function buildSystem(){
+  return `You are a warm, professional AI researcher conducting a qualitative interview for an academic study: "The Perceived Economic and Financial Outcomes of Possible US Disengagement from NATO: An LLM-Augmented Study in Finland."
 
-The participant has completed a structured questionnaire. Their responses:
-${JSON.stringify(data, null, 2)}
+Participant background:
+${JSON.stringify(bgData,null,2)}
 
-INTERVIEW STRUCTURE:
-Ask ONE question at a time across these 8 themes in order. If an answer is brief or vague, ask ONE short follow-up before moving on. After each participant response, you MUST append a hidden tone tag on a new line in this exact format:
-[TONE: <primary emotion> | <secondary emotion> | <focus area> | Sentiment: <score from -1.0 very negative to +1.0 very positive>]
+INTERVIEW DESIGN:
+You will guide the participant through ${TOTAL_Q} questions across five themes. For STRUCTURED questions, present clickable answer options by including a JSON block at the end of your message in this exact format:
+{"choices":["Option A","Option B","Option C"]}
+For OPEN-ENDED questions, do not include any JSON block — just ask the question naturally.
 
-The tone tag must always be on its own line at the very end of your message, after your spoken response. It is a research annotation, not shown to the participant.
+After EVERY participant response (structured or open), append a silent tone tag on its own line:
+[TONE: <primary emotion> | <secondary emotion> | <focus area> | Sentiment: <-1.0 to +1.0>]
 
-THEMES:
-1. Overall economic risk: Ask them to reflect in their own words on the biggest economic risk Finland faces if the US pulls back from NATO.
-2. Trade: Ask which specific Finnish export industries they worry about most and why.
-3. Investment signals: Ask what signals (political, military, economic) they think would first trigger capital flight from Finland.
-4. Public finances: Ask whether they think the Finnish government could absorb a major defence spending increase without harming public services.
-5. Financial worst-case: Ask what a realistic worst-case scenario for Finnish banks and pension funds might look like.
-6. US–NATO relations: Ask them to elaborate on why they think US–NATO relations are currently in the state they described in the questionnaire.
-7. Finland's best response: Ask what the single most important thing Finland could do to prepare for possible US disengagement.
-8. Open reflection: Ask if there is anything about the economic or financial implications they feel the study might be missing or underexploring.
+THEMES AND QUESTIONS:
+
+THEME 1 — US-NATO RELATIONS (structured)
+Q1. STRUCTURED: "Do you think the US is currently maintaining good relationships with other NATO member countries, especially under the Trump administration?" Options: ["Strongly yes — relations remain solid","Somewhat yes — strained but intact","Neutral / uncertain","Somewhat no — relations have noticeably deteriorated","Strongly no — the alliance is seriously undermined"]
+Q2. STRUCTURED: "How likely do you think it is that the US will disengage from NATO in the near future?" Options: ["Definitely will disengage","Probably will disengage","Unsure","Probably will not disengage","Definitely will not disengage"]
+Q3. OPEN: Based on their answer to Q2, ask them to explain in their own words WHY they think that — what signals or events inform their view?
+
+THEME 2 — ECONOMIC PERCEPTIONS (mix)
+Q4. STRUCTURED: "If the US reduced its NATO commitment, how would you expect Finnish government defence spending to change?" Options: ["Increase significantly","Increase somewhat","Stay the same","Decrease somewhat","Don't know"]
+Q5. STRUCTURED: "How concerned are you about the impact on your personal income or household finances?" Options: ["Not at all concerned","Slightly concerned","Moderately concerned","Very concerned","Extremely concerned"]
+Q6. STRUCTURED: "Which trade relationships concern you most?" Options: ["US–Finland bilateral trade","EU single market stability","Nordic economic cooperation","Russia-related sanctions risks","Global supply chain disruption","No significant concern"]
+Q7. STRUCTURED: "Do you think a US NATO withdrawal would raise inflation in Finland?" Options: ["Yes, significantly","Yes, somewhat","No meaningful change","It might lower inflation","Don't know"]
+Q8. OPEN: Ask them which specific Finnish industries or sectors they personally worry about most — and why those in particular?
+
+THEME 3 — FINANCIAL MARKET PERCEPTIONS (mix)
+Q9. STRUCTURED: "How do you think Finnish financial markets — stocks, bonds, the euro — would react in the short term to a US NATO withdrawal?" Options: ["Sharp sell-off and panic","Mild nervousness and decline","No meaningful change","Markets would quickly stabilise","Don't know"]
+Q10. STRUCTURED: "How long do you think any financial market impact would last?" Options: ["Days — a short-term shock","Weeks to months","Years — a structural shift","A permanent change in Finland's risk profile","Don't know"]
+Q11. STRUCTURED: "How likely is it that foreign direct investment would leave Finland?" Options: ["Very unlikely","Unlikely","Neutral","Likely","Very likely"]
+Q12. STRUCTURED: "Could a US NATO withdrawal trigger a bank run or serious loss of confidence in Finnish banks?" Options: ["Very likely","Somewhat likely","Unlikely — Finnish banks are resilient","Very unlikely","Don't know"]
+Q13. OPEN: Ask them to describe in their own words what a realistic worst-case financial scenario for Finland might look like — what would they personally feel or do?
+
+THEME 4 — MACRO-FINANCIAL STABILITY (mix)
+Q14. STRUCTURED: "How confident are you that Finland's macro-financial system — public debt, credit ratings, monetary policy — could remain stable without US NATO backing?" Options: ["Not at all confident","Slightly confident","Moderately confident","Quite confident","Very confident"]
+Q15. STRUCTURED: "How likely is it that capital and foreign investment would flow OUT of Finland in the event of US disengagement?" Options: ["Very unlikely","Unlikely","Neutral","Likely","Very likely"]
+Q16. OPEN: Ask them — if they were advising the Finnish government today, what single economic or financial policy action would they recommend to prepare for possible US disengagement?
+
+THEME 5 — REFLECTION (open, sentiment-heavy)
+Q17. OPEN: Ask them to reflect personally — beyond economics and finance, how does the idea of possible US disengagement from NATO make them feel as a person living in Finland? Encourage them to be honest about any anxiety, confidence, or ambivalence they feel.
+Q18. OPEN: Ask if there is anything about the economic or financial implications for Finland that this study has not covered — anything they think is missing or underexplored.
 
 RULES:
+- Work through Q1–Q18 in strict order
+- For structured questions ALWAYS include the {"choices":[...]} JSON block
+- For open questions NEVER include the JSON block
+- After each participant response append the [TONE:...] tag silently
+- If an answer is very brief, ask ONE gentle follow-up before moving on
 - Never repeat a question already asked
-- Personalise questions based on their questionnaire answers
-- Accept any answer without criticism — there are no wrong answers
-- If participant says they do not know, acknowledge and move on
-- Keep your spoken responses to 2–4 sentences
+- Accept all answers without judgement — there are no wrong answers
+- Keep your spoken text to 2–4 sentences per turn
 - Be warm, encouraging, and professionally conversational
 - If participant responds in Finnish, continue in Finnish
-- Do NOT number your questions visibly`;
+- Do NOT number your questions visibly to the participant
+- Start now with a warm welcome and Q1`;
+}
 
-async function callClaude(userMsg) {
-  if (userMsg) chatHistory.push({role:'user', content: userMsg});
-  const key = document.getElementById('api-key').value.trim();
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': key,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true'
-    },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 400,
-      system: SYSTEM_PROMPT(qResponses),
-      messages: chatHistory
+// ── CLAUDE API CALL ──────────────────────────────────────────────────────────
+async function callClaude(userMsg){
+  if(userMsg) chatHistory.push({role:'user',content:userMsg});
+  const res=await fetch(PROXY_URL,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      model:'claude-sonnet-4-20250514',
+      max_tokens:500,
+      system:buildSystem(),
+      messages:chatHistory
     })
   });
-  const d = await res.json();
-  if (d.error) throw new Error(d.error.message);
-  const fullReply = d.content.map(b=>b.text||'').join('');
-  chatHistory.push({role:'assistant', content: fullReply});
-  return fullReply;
+  const d=await res.json();
+  if(d.error) throw new Error(d.error.message);
+  const reply=d.content.map(b=>b.text||'').join('');
+  chatHistory.push({role:'assistant',content:reply});
+  return reply;
 }
 
-function parseReply(fullReply) {
-  const toneMatch = fullReply.match(/\[TONE:.*?\]/s);
-  const toneTag = toneMatch ? toneMatch[0] : null;
-  const visibleText = fullReply.replace(/\[TONE:.*?\]/s, '').trim();
-  return { visibleText, toneTag };
+// ── PARSE REPLY ──────────────────────────────────────────────────────────────
+function parseReply(raw){
+  const toneMatch=raw.match(/\[TONE:.*?\]/s);
+  const toneTag=toneMatch?toneMatch[0]:null;
+  let choicesData=null;
+  const jsonMatch=raw.match(/\{"choices":\[.*?\]\}/s);
+  if(jsonMatch){
+    try{choicesData=JSON.parse(jsonMatch[0]);}catch(e){}
+  }
+  const visible=raw
+    .replace(/\[TONE:.*?\]/s,'')
+    .replace(/\{"choices":\[.*?\]\}/s,'')
+    .trim();
+  return{visible,toneTag,choices:choicesData?choicesData.choices:null};
 }
 
-function addMsg(text, role) {
-  const msgs = document.getElementById('messages');
-  const div = document.createElement('div');
-  div.className = 'msg ' + role;
-  div.textContent = text;
+// ── DOM HELPERS ──────────────────────────────────────────────────────────────
+function addMsg(text,role){
+  const msgs=document.getElementById('messages');
+  const div=document.createElement('div');
+  div.className='msg '+role;
+  div.textContent=text;
   msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
+  msgs.scrollTop=msgs.scrollHeight;
   return div;
 }
 
-function addToneBadge(toneTag, afterMsg) {
-  if (!toneTag) return;
-  toneTags.push(toneTag);
-  const badge = document.createElement('div');
-  badge.className = 'tone-badge';
-  badge.textContent = toneTag;
-  afterMsg.parentNode.insertBefore(badge, afterMsg.nextSibling);
-  document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
+function addChoices(choices){
+  const msgs=document.getElementById('messages');
+  const wrap=document.createElement('div');
+  wrap.className='choice-wrap';
+  wrap.id='choice-wrap';
+  choices.forEach(c=>{
+    const btn=document.createElement('button');
+    btn.className='choice-btn';
+    btn.textContent=c;
+    btn.onclick=()=>choiceSelected(c);
+    wrap.appendChild(btn);
+  });
+  msgs.appendChild(wrap);
+  msgs.scrollTop=msgs.scrollHeight;
+  awaitingChoice=true;
+  document.getElementById('user-input').placeholder='Or type your own response…';
 }
 
-async function saveToSheets(partial) {
-  const sheetsUrl = document.getElementById('sheets-url').value.trim();
-  if (!sheetsUrl) return;
-  const transcript = buildTranscript();
-  try {
-    await fetch(sheetsUrl, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        ...qResponses,
-        transcript,
-        tone_summary: toneTags.join(' | '),
-        partial: partial || false,
-        timestamp: new Date().toISOString()
-      })
-    });
-    if (!partial) {
-      const ind = document.getElementById('save-indicator');
-      ind.style.display = 'block';
-      setTimeout(() => { ind.style.display = 'none'; }, 3000);
-    }
-  } catch(e) { console.log('Sheet save error:', e); }
+function removeChoices(){
+  const w=document.getElementById('choice-wrap');
+  if(w) w.remove();
+  awaitingChoice=false;
+  document.getElementById('user-input').placeholder='Type your response and press Enter…';
 }
 
-async function sendMsg() {
-  const input = document.getElementById('user-input');
-  const btn = document.getElementById('send-btn');
-  const text = input.value.trim();
-  if (!text) return;
-  input.value = ''; btn.disabled = true;
-  addMsg(text, 'user');
-  if (qIndex < TOTAL_Q - 1) qIndex++;
+function addTonePill(tag,afterEl){
+  if(!tag) return;
+  toneTags.push(tag);
+  const pill=document.createElement('div');
+  pill.className='tone-pill';
+  pill.textContent=tag;
+  afterEl.parentNode.insertBefore(pill,afterEl.nextSibling);
+  document.getElementById('messages').scrollTop=document.getElementById('messages').scrollHeight;
+}
+
+// ── SEND / RECEIVE ────────────────────────────────────────────────────────────
+async function handleResponse(userMsg){
+  const btn=document.getElementById('send-btn');
+  btn.disabled=true;
+  if(qIdx<TOTAL_Q-1) qIdx++;
   updateQdots();
-  const t = addMsg('Thinking…', 'typing');
-  try {
-    const fullReply = await callClaude(text);
+  const t=addMsg('Thinking…','typing');
+  try{
+    const raw=await callClaude(userMsg);
     t.remove();
-    const { visibleText, toneTag } = parseReply(fullReply);
-    const msgEl = addMsg(visibleText, 'ai');
-    addToneBadge(toneTag, msgEl);
+    const{visible,toneTag,choices}=parseReply(raw);
+    const msgEl=addMsg(visible,'ai');
+    addTonePill(toneTag,msgEl);
+    if(choices) addChoices(choices);
     await saveToSheets(true);
-  } catch(e) {
+  }catch(e){
     t.remove();
-    addMsg('Connection error: ' + e.message + ' — please check your API key.', 'ai');
+    addMsg('Connection error: '+e.message,'ai');
   }
-  btn.disabled = false;
-  input.focus();
+  btn.disabled=false;
 }
 
-async function initChat() {
-  const btn = document.getElementById('send-btn'); btn.disabled = true;
-  const t = addMsg('Connecting to AI interviewer…', 'typing');
-  try {
-    const fullReply = await callClaude(null);
-    t.remove();
-    const { visibleText } = parseReply(fullReply);
-    addMsg(visibleText, 'ai');
-  } catch(e) {
-    t.remove();
-    addMsg('Could not connect. Please check your API key and refresh the page.', 'ai');
-  }
-  btn.disabled = false;
+async function sendMsg(){
+  removeChoices();
+  const input=document.getElementById('user-input');
+  const text=input.value.trim();
+  if(!text) return;
+  input.value='';
+  addMsg(text,'user');
+  await handleResponse(text);
+  document.getElementById('user-input').focus();
 }
 
-document.addEventListener('keydown', e => {
-  if (e.target.id === 'user-input' && e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault(); sendMsg();
+async function choiceSelected(choice){
+  removeChoices();
+  addMsg(choice,'user');
+  await handleResponse(choice);
+}
+
+async function initChat(){
+  const btn=document.getElementById('send-btn'); btn.disabled=true;
+  const t=addMsg('Connecting to AI interviewer…','typing');
+  try{
+    const raw=await callClaude(null);
+    t.remove();
+    const{visible,toneTag,choices}=parseReply(raw);
+    const msgEl=addMsg(visible,'ai');
+    addTonePill(toneTag,msgEl);
+    if(choices) addChoices(choices);
+  }catch(e){
+    t.remove();
+    addMsg('Could not connect. Please check your internet connection and try refreshing.','ai');
   }
+  btn.disabled=false;
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.target.id==='user-input'&&e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();}
 });
 
-async function goExport() {
+// ── GOOGLE SHEETS SAVE ───────────────────────────────────────────────────────
+async function saveToSheets(partial){
+  if(!SHEETS_URL||SHEETS_URL==='YOUR-GOOGLE-SHEETS-APPS-SCRIPT-URL') return;
+  try{
+    await fetch(SHEETS_URL,{
+      method:'POST',mode:'no-cors',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        ...bgData,
+        transcript:buildTranscript(),
+        tone_summary:toneTags.join(' | '),
+        partial:partial||false,
+        timestamp:new Date().toISOString()
+      })
+    });
+    if(!partial){
+      const n=document.getElementById('save-note');
+      n.style.display='block';
+      setTimeout(()=>n.style.display='none',3000);
+    }
+  }catch(e){console.log('Sheet save:',e);}
+}
+
+// ── EXPORT ───────────────────────────────────────────────────────────────────
+async function goExport(){
   await saveToSheets(false);
-  document.getElementById('phase2').style.display = 'none';
-  document.getElementById('phase3').style.display = 'block';
+  document.getElementById('phase2').style.display='none';
+  document.getElementById('phase3').style.display='block';
   setTab(3);
-  document.getElementById('transcript-preview').textContent = buildTranscript();
+  document.getElementById('preview').textContent=buildTranscript();
   window.scrollTo(0,0);
 }
 
-function buildTranscript() {
-  const q = qResponses;
-  const lines = [
-    'NATO ECONOMIC PERCEPTIONS STUDY — FULL PARTICIPANT RECORD',
-    '='.repeat(58), '',
-    'TIMESTAMP: ' + new Date().toISOString(), '',
-    'SECTION A — BACKGROUND',
-    'Nationality: ' + q.nationality, 'Age: ' + q.age, 'Gender: ' + q.gender,
-    'Education: ' + q.education, 'Region: ' + q.region, 'Border district: ' + q.border_district, '',
-    'SECTION B — ECONOMIC PERCEPTIONS',
-    'Govt spending change expected: ' + q.gov_spending,
-    'Personal income concern (1–5): ' + q.personal_income_concern,
-    'At-risk employment sectors: ' + q.employment_sectors,
-    'Inflation expectation: ' + q.inflation,
-    'Capital flow likelihood (1–5): ' + q.capital_flow,
-    'Trade concerns: ' + q.trade_concerns,
-    'Overall stability dependence (1–5): ' + q.overall_stability, '',
-    'SECTION C — FINANCIAL PERCEPTIONS',
-    'Market short-term reaction: ' + q.market_reaction,
-    'Duration of market impact: ' + q.market_duration,
-    'FDI outlook (1–5): ' + q.fdi_outlook,
-    'Macro-financial confidence (1–5): ' + q.macro_confidence,
-    'Bank run risk: ' + q.bank_run_risk,
-    'Financial sectors at risk: ' + q.financial_sectors, '',
-    'SECTION D — GEOPOLITICAL PERCEPTIONS',
-    'US–NATO relations: ' + q.us_nato_relations,
-    'US disengagement likelihood: ' + q.us_disengagement,
-    'Finland recommended response: ' + q.finland_response, '',
-    'TONE SUMMARY ACROSS ALL RESPONSES',
-    toneTags.length > 0 ? toneTags.join('\n') : 'No tone tags recorded yet.', '',
-    'AI INTERVIEW TRANSCRIPT', '-'.repeat(40)
+function buildTranscript(){
+  const b=bgData;
+  const lines=[
+    'NATO ECONOMIC PERCEPTIONS STUDY — PARTICIPANT RECORD',
+    '='.repeat(56),'',
+    'TIMESTAMP: '+new Date().toISOString(),'',
+    'BACKGROUND',
+    'Nationality: '+b.nationality,'Age: '+b.age,'Gender: '+b.gender,
+    'Education: '+b.education,'Region: '+b.region,'Border district: '+b.border_district,'',
+    'TONE ANALYSIS SUMMARY',
+    toneTags.length>0?toneTags.join('\n'):'No tone tags yet.','',
+    'INTERVIEW TRANSCRIPT','-'.repeat(40)
   ];
-  for (const m of chatHistory) {
-    lines.push((m.role === 'user' ? 'PARTICIPANT' : 'INTERVIEWER') + ': ' + m.content, '');
+  for(const m of chatHistory){
+    lines.push((m.role==='user'?'PARTICIPANT':'INTERVIEWER')+': '+m.content,'');
   }
   return lines.join('\n');
 }
 
-function copyTranscript() {
+function copyTranscript(){
   navigator.clipboard.writeText(buildTranscript())
-    .then(() => {
-      const b = document.querySelector('.btn.success-btn');
-      b.textContent = 'Copied!';
-      setTimeout(() => { b.textContent = 'Copy full transcript'; }, 2500);
+    .then(()=>{
+      const b=document.querySelector('.btn.gold');
+      b.textContent='Copied!';
+      setTimeout(()=>b.innerHTML='&#128203; Copy full transcript',2500);
     })
-    .catch(() => alert('Please select the text in the preview box and copy manually.'));
+    .catch(()=>alert('Please select and copy the text manually from the preview box.'));
 }
 </script>
 </body>
