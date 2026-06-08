@@ -522,7 +522,7 @@ async function initChat(){
   const btn=document.getElementById('send-btn'); btn.disabled=true;
   const t=addMsg('Connecting to AI interviewer…','typing');
   try{
-    const raw=await callClaude(null);
+    const raw=await callClaude('Hello, please begin the interview.');
     t.remove();
     const{visible,toneTag,choices}=parseReply(raw);
     const msgEl=addMsg(visible,'ai');
