@@ -19,8 +19,6 @@
   --shadow:0 2px 12px rgba(15,25,35,0.08);--shadow-lg:0 8px 32px rgba(15,25,35,0.12);
 }
 body{font-family:'Source Sans 3',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;font-size:15px;line-height:1.65}
-
-/* ── HEADER ── */
 .site-header{background:var(--flag);padding:0;overflow:hidden;position:relative}
 .header-stripe{height:5px;background:linear-gradient(90deg,var(--gold) 0%,#E8B840 50%,var(--gold) 100%)}
 .header-body{padding:2.5rem 2rem 2rem;text-align:center;position:relative}
@@ -28,40 +26,26 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--paper);color:var(--
 .header-eyebrow{font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
 .header-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:600;color:#fff;line-height:1.2;margin-bottom:0.5rem}
 .header-sub{font-size:0.875rem;color:rgba(255,255,255,0.6);font-weight:300;max-width:480px;margin:0 auto}
-
-/* ── PHASE NAV ── */
 .phase-nav{display:flex;background:#0A2540;border-bottom:1px solid rgba(255,255,255,0.06)}
 .phase-nav button{flex:1;padding:0.8rem 0.5rem;background:none;border:none;border-right:1px solid rgba(255,255,255,0.06);color:rgba(255,255,255,0.35);font-family:'Source Sans 3',sans-serif;font-size:0.78rem;font-weight:500;cursor:default;display:flex;align-items:center;justify-content:center;gap:7px;letter-spacing:0.04em;transition:all 0.2s}
 .phase-nav button:last-child{border-right:none}
 .phase-nav button.active{color:#fff;background:rgba(255,255,255,0.08);border-bottom:2px solid var(--gold)}
 .phase-nav button.done{color:#6EC99A}
 .pn-num{width:18px;height:18px;border-radius:50%;background:currentColor;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:var(--flag);opacity:0.8;flex-shrink:0}
-
-/* ── CONTAINER ── */
 .container{max-width:700px;margin:0 auto;padding:2.25rem 1.25rem 5rem}
-
-/* ── CARDS ── */
 .card{background:var(--paper-card);border:1px solid var(--paper-warm);border-radius:var(--radius-lg);padding:1.75rem;margin-bottom:1.25rem;box-shadow:var(--shadow)}
 .card-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-bottom:0.75rem}
-
-/* ── CONSENT ── */
 .consent-badge{display:inline-flex;align-items:center;gap:6px;background:var(--flag-pale);color:var(--flag);font-size:0.75rem;font-weight:600;padding:4px 10px;border-radius:20px;margin-bottom:1rem;letter-spacing:0.04em}
 .consent-text{font-size:0.875rem;color:var(--ink-mid);line-height:1.75;margin-bottom:0.875rem}
 .consent-list{font-size:0.875rem;color:var(--ink-mid);padding-left:1.5rem;margin-bottom:0.875rem;line-height:1.9}
 .consent-check-row{display:flex;align-items:flex-start;gap:10px;padding:1rem;background:var(--flag-pale);border:1px solid var(--flag-light);border-radius:var(--radius);margin-bottom:1.25rem;cursor:pointer}
 .consent-check-row input{accent-color:var(--flag);width:16px;height:16px;flex-shrink:0;margin-top:2px}
 .consent-check-row span{font-size:0.875rem;color:var(--ink);font-weight:500;line-height:1.5}
-
-/* ── PROGRESS ── */
 .prog-wrap{margin-bottom:2rem}
 .prog-meta{display:flex;justify-content:space-between;font-size:0.78rem;color:var(--ink-soft);margin-bottom:6px;font-weight:500}
 .prog-track{height:3px;background:var(--paper-warm);border-radius:2px;overflow:hidden}
 .prog-fill{height:3px;background:linear-gradient(90deg,var(--flag),var(--flag-mid));border-radius:2px;transition:width 0.4s ease}
-
-/* ── SECTION INTRO ── */
 .sec-intro{background:var(--flag-pale);border-left:3px solid var(--flag);border-radius:0 var(--radius) var(--radius) 0;padding:0.875rem 1.125rem;margin-bottom:1.5rem;font-size:0.85rem;color:var(--flag-mid);line-height:1.6}
-
-/* ── FIELDS ── */
 .field{margin-bottom:1.5rem}
 .field-label{display:block;font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem;line-height:1.4}
 .field-hint{display:block;font-size:0.8rem;color:var(--ink-soft);margin-bottom:0.625rem;font-style:italic}
@@ -80,8 +64,6 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--paper);color:var(--
 .lo input{accent-color:var(--flag)}
 .lo-num{font-size:1rem;font-weight:600;color:var(--flag)}
 .lo span{font-size:0.7rem;color:var(--ink-soft);text-align:center;line-height:1.3}
-
-/* ── BUTTONS ── */
 .nav-row{display:flex;align-items:center;gap:0.75rem;margin-top:2rem;flex-wrap:wrap}
 .btn{padding:0.65rem 1.375rem;border-radius:var(--radius);border:2px solid var(--flag);background:var(--flag);color:#fff;font-family:'Source Sans 3',sans-serif;font-size:0.875rem;font-weight:600;cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;gap:7px;letter-spacing:0.02em}
 .btn:hover{background:var(--flag-mid);border-color:var(--flag-mid)}
@@ -93,127 +75,119 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--paper);color:var(--
 .btn.grn{background:var(--green);border-color:var(--green)}
 .btn.grn:hover{background:#145535;border-color:#145535}
 .val-msg{font-size:0.8rem;color:var(--red);display:none}
-
-/* ── CHAT ── */
 .chat-shell{border:1.5px solid var(--paper-warm);border-radius:var(--radius-lg);overflow:hidden;background:var(--paper-card);box-shadow:var(--shadow-lg)}
 .chat-head{padding:1rem 1.25rem;border-bottom:1px solid var(--paper-warm);display:flex;align-items:center;gap:0.75rem;background:linear-gradient(135deg,#0A2540,var(--flag))}
 .live-dot{width:9px;height:9px;border-radius:50%;background:#4ADE80;flex-shrink:0;box-shadow:0 0 0 3px rgba(74,222,128,0.25);animation:livepulse 2s infinite}
 @keyframes livepulse{0%,100%{box-shadow:0 0 0 3px rgba(74,222,128,0.25)}50%{box-shadow:0 0 0 6px rgba(74,222,128,0.1)}}
-.chat-head-title{font-size:0.875rem;font-weight:600;color:#fff}
-.chat-head-sub{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-left:auto}
-.q-track{display:flex;gap:3px;padding:0.625rem 1.25rem;background:#F0EDE8;border-bottom:1px solid var(--paper-warm)}
-.q-dot{height:3px;flex:1;border-radius:2px;background:var(--paper-warm);transition:background 0.3s}
-.q-dot.done{background:var(--green)}
-.q-dot.active{background:var(--flag)}
-#messages{height:440px;overflow-y:auto;padding:1.25rem;display:flex;flex-direction:column;gap:0.875rem;scroll-behavior:smooth;background:var(--paper)}
-.msg{max-width:86%;padding:0.75rem 1rem;border-radius:var(--radius-lg);font-size:0.875rem;line-height:1.65;animation:fadein 0.25s ease}
-@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.msg.ai{background:var(--paper-card);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px;border:1px solid var(--paper-warm);box-shadow:0 1px 4px rgba(15,25,35,0.06)}
+.chat-head-title{font-size:0.875rem;font-weight:600;color:#fff;flex:1}
+.chat-head-sub{font-size:0.75rem;color:rgba(255,255,255,0.5)}
+.q-track{display:flex;gap:4px;padding:0.75rem 1.25rem;background:#F0F4F8;border-bottom:1px solid var(--paper-warm);flex-wrap:wrap}
+.q-dot{width:10px;height:10px;border-radius:50%;background:var(--paper-warm);border:1.5px solid var(--ink-faint);transition:all 0.3s}
+.q-dot.active{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,153,42,0.2)}
+.q-dot.done{background:var(--green);border-color:var(--green)}
+#messages{padding:1.25rem;display:flex;flex-direction:column;gap:0.875rem;min-height:200px;max-height:520px;overflow-y:auto}
+.msg{max-width:85%;padding:0.75rem 1rem;border-radius:var(--radius-lg);font-size:0.9rem;line-height:1.6;white-space:pre-wrap}
+.msg.ai{background:var(--flag-pale);border:1px solid var(--flag-light);color:var(--ink);align-self:flex-start;border-bottom-left-radius:4px}
 .msg.user{background:var(--flag);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
-.msg.typing{color:var(--ink-faint);font-style:italic;background:var(--paper-card);align-self:flex-start;border:1px solid var(--paper-warm)}
-.msg.sys{background:var(--green-light);color:var(--green);align-self:center;font-size:0.78rem;border-radius:20px;padding:0.35rem 1rem;max-width:100%;text-align:center;border:1px solid #A8DFC0}
-.tone-pill{display:inline-block;font-size:0.68rem;padding:2px 9px;border-radius:20px;margin-top:5px;background:var(--gold-light);color:#7A5C0A;border:1px solid #E8D080;font-weight:500}
-
-/* ── CHOICE BUBBLES IN CHAT ── */
-.choice-wrap{display:flex;flex-wrap:wrap;gap:7px;margin-top:0.75rem;max-width:86%}
-.choice-btn{padding:0.45rem 0.875rem;border-radius:20px;border:1.5px solid var(--flag-light);background:var(--flag-pale);color:var(--flag);font-family:'Source Sans 3',sans-serif;font-size:0.8rem;font-weight:500;cursor:pointer;transition:all 0.15s}
+.msg.typing{background:var(--paper-warm);color:var(--ink-soft);align-self:flex-start;font-style:italic}
+.tone-pill{align-self:flex-start;font-size:0.7rem;color:var(--ink-soft);background:var(--gold-light);border:1px solid #E8D8A0;border-radius:20px;padding:2px 10px;font-style:italic;max-width:90%}
+.choice-wrap{display:flex;flex-wrap:wrap;gap:0.5rem;padding:0 1.25rem 1rem;align-self:flex-start}
+.choice-btn{padding:0.5rem 0.875rem;border-radius:var(--radius);border:1.5px solid var(--flag-light);background:var(--flag-pale);color:var(--flag);font-family:'Source Sans 3',sans-serif;font-size:0.825rem;font-weight:500;cursor:pointer;transition:all 0.15s}
 .choice-btn:hover{background:var(--flag);color:#fff;border-color:var(--flag)}
-
-/* ── INPUT ROW ── */
-.input-row{display:flex;gap:0.5rem;padding:0.875rem;border-top:1px solid var(--paper-warm);background:var(--paper)}
-#user-input{flex:1;padding:0.6rem 0.875rem;border:1.5px solid var(--paper-warm);border-radius:var(--radius);background:var(--paper-card);color:var(--ink);font-family:'Source Sans 3',sans-serif;font-size:0.875rem;resize:none;height:40px;transition:border-color 0.15s}
-#user-input:focus{outline:none;border-color:var(--flag-mid);box-shadow:0 0 0 3px rgba(26,95,171,0.1)}
-.save-note{font-size:0.75rem;color:var(--green);margin-top:0.5rem;display:none}
-
-/* ── EXPORT ── */
-.export-hero{background:linear-gradient(135deg,var(--green),#1D8050);border-radius:var(--radius-lg);padding:2rem;text-align:center;color:#fff;margin-bottom:1.25rem}
-.export-hero h2{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;margin-bottom:0.5rem}
+.input-row{display:flex;gap:0.625rem;padding:0.875rem 1.25rem;border-top:1px solid var(--paper-warm);background:var(--paper-card)}
+#user-input{flex:1;padding:0.625rem 0.875rem;border:1.5px solid var(--paper-warm);border-radius:var(--radius);font-family:'Source Sans 3',sans-serif;font-size:0.875rem;color:var(--ink);background:var(--paper);resize:none;height:42px;transition:border-color 0.15s}
+#user-input:focus{outline:none;border-color:var(--flag-mid);box-shadow:0 0 0 3px rgba(26,95,171,0.12)}
+.save-note{font-size:0.8rem;color:var(--green);margin-top:0.75rem;display:none}
+.export-hero{background:linear-gradient(135deg,var(--green),#145535);border-radius:var(--radius-lg);padding:2rem;text-align:center;color:#fff;margin-bottom:1.5rem}
+.export-hero h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:0.5rem}
 .export-hero p{font-size:0.875rem;opacity:0.85;margin-bottom:1.25rem}
-.transcript-box{background:var(--paper-card);border:1px solid var(--paper-warm);border-radius:var(--radius);padding:1.125rem;margin-top:1rem}
-.transcript-box pre{font-size:0.72rem;color:var(--ink-soft);white-space:pre-wrap;line-height:1.6;max-height:320px;overflow-y:auto}
+.transcript-box{background:var(--paper-card);border:1px solid var(--paper-warm);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow)}
+.transcript-box pre{font-size:0.775rem;color:var(--ink-mid);white-space:pre-wrap;line-height:1.7;max-height:400px;overflow-y:auto}
 </style>
 </head>
 <body>
 
-<div class="site-header">
+<header class="site-header">
   <div class="header-stripe"></div>
   <div class="header-body">
-    <div class="header-eyebrow">University Research Study · Finland · 2026</div>
+    <div class="header-eyebrow">University Research Study &middot; Finland &middot; 2026</div>
     <h1 class="header-title">NATO Economic Perceptions Study</h1>
     <p class="header-sub">An LLM-Augmented Qualitative Study on the Perceived Economic &amp; Financial Outcomes of Possible US Disengagement from NATO</p>
   </div>
-</div>
+</header>
 
-<div class="phase-nav">
-  <button id="tab0" class="active"><span class="pn-num">1</span> Consent</button>
-  <button id="tab1"><span class="pn-num">2</span> Background</button>
-  <button id="tab2"><span class="pn-num">3</span> AI Interview</button>
-  <button id="tab3"><span class="pn-num">4</span> Export</button>
-</div>
+<nav class="phase-nav">
+  <button id="tab0" class="active"><span class="pn-num">1</span>Consent</button>
+  <button id="tab1"><span class="pn-num">2</span>Background</button>
+  <button id="tab2"><span class="pn-num">3</span>AI Interview</button>
+  <button id="tab3"><span class="pn-num">4</span>Export</button>
+</nav>
 
 <div class="container">
 
-  <!-- ══ PHASE 0 — CONSENT ══ -->
+  <!-- PHASE 0 — CONSENT -->
   <div id="phase0">
     <div class="card">
       <div class="consent-badge">&#128196; Participant Information Sheet</div>
       <h2 class="card-title">Welcome &amp; Consent</h2>
-      <p class="consent-text">You are invited to take part in an academic research study examining how people in Finland perceive the possible economic and financial consequences of a US withdrawal from NATO. The study is anonymous, voluntary, and takes approximately <strong>15–20 minutes</strong>.</p>
+      <p class="consent-text">You are invited to take part in an academic research study examining how people in Finland perceive the possible economic and financial consequences of a US withdrawal from NATO. The study is anonymous, voluntary, and takes approximately 15&ndash;20 minutes.</p>
       <p class="consent-text">The study has two parts:</p>
       <ul class="consent-list">
         <li>A short background questionnaire (approx. 3 minutes)</li>
-        <li>An AI-conducted interview covering economic, financial, and geopolitical perceptions — with both structured choice questions and open reflections (approx. 12–17 minutes)</li>
+        <li>An AI-conducted interview covering economic, financial, and geopolitical perceptions &mdash; with both structured choice questions and open reflections (approx. 12&ndash;17 minutes)</li>
       </ul>
-      <p class="consent-text"><strong>Your responses are completely anonymous.</strong> No names, email addresses, or identifying information are collected. You may stop at any time without consequence. Responses are saved automatically to a secure research database.</p>
-      <p class="consent-text">This study is conducted at <strong>[Your University Name]</strong>. For questions please contact: <strong>[researcher@university.fi]</strong></p>
+      <p class="consent-text">Your responses are completely anonymous. No names, email addresses, or identifying information are collected. You may stop at any time without consequence. Responses are saved automatically to a secure research database.</p>
+      <p class="consent-text">This study is conducted at [Your University Name]. For questions please contact: [researcher@university.fi]</p>
+      <label class="consent-check-row">
+        <input type="checkbox" id="consent-check">
+        <span>I have read the information above and I voluntarily consent to participate in this anonymous research study.</span>
+      </label>
+      <span class="val-msg" id="consent-err">Please tick the consent box to continue.</span>
+      <div class="nav-row">
+        <button class="btn" onclick="startBackground()">Begin study &#8594;</button>
+      </div>
     </div>
-    <label class="consent-check-row">
-      <input type="checkbox" id="consent-check">
-      <span>I have read the information above and I voluntarily consent to participate in this anonymous research study.</span>
-    </label>
-    <button class="btn" onclick="startBackground()">Begin study &#8594;</button>
-    <p id="consent-err" style="font-size:0.8rem;color:var(--red);margin-top:0.625rem;display:none">Please tick the consent box to continue.</p>
   </div>
 
-  <!-- ══ PHASE 1 — BACKGROUND ══ -->
+  <!-- PHASE 1 — BACKGROUND -->
   <div id="phase1" style="display:none">
     <div class="prog-wrap">
-      <div class="prog-meta"><span>Background Information</span><span>Step 1 of 2</span></div>
+      <div class="prog-meta"><span>Background Questionnaire</span><span>Step 1 of 2</span></div>
       <div class="prog-track"><div class="prog-fill" style="width:50%"></div></div>
     </div>
-    <div class="sec-intro">Please answer all six questions below. This information helps us understand the diversity of perspectives in the study. All responses are anonymous.</div>
-    <div class="two-col">
-      <div class="field"><label class="field-label">1. Nationality</label>
-        <select id="nationality"><option value="">Select…</option><option>Finnish</option><option>Swedish</option><option>Norwegian</option><option>Estonian</option><option>Other EU</option><option>Non-EU</option></select></div>
-      <div class="field"><label class="field-label">2. Age group</label>
-        <select id="age"><option value="">Select…</option><option>18–24</option><option>25–34</option><option>35–44</option><option>45–54</option><option>55–64</option><option>65+</option></select></div>
-    </div>
-    <div class="two-col">
-      <div class="field"><label class="field-label">3. Gender</label>
-        <div class="radio-group">
-          <label><input type="radio" name="gender" value="Male"> Male</label>
-          <label><input type="radio" name="gender" value="Female"> Female</label>
-          <label><input type="radio" name="gender" value="Non-binary"> Non-binary</label>
-          <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
-        </div></div>
-      <div class="field"><label class="field-label">4. Highest education</label>
+    <div class="card">
+      <div class="sec-intro">Please answer all six questions below. This takes about 3 minutes and helps us contextualise your interview responses. All answers are anonymous.</div>
+      <h2 class="card-title">About You</h2>
+      <div class="field"><label class="field-label">1. What is your nationality?</label>
+        <select id="nationality"><option value="">Select…</option><option>Finnish</option><option>Other EU</option><option>Non-EU</option><option>Prefer not to say</option></select></div>
+      <div class="two-col">
+        <div class="field"><label class="field-label">2. Age group</label>
+          <select id="age"><option value="">Select…</option><option>18–24</option><option>25–34</option><option>35–44</option><option>45–54</option><option>55–64</option><option>65+</option></select></div>
+        <div class="field"><label class="field-label">3. Gender</label>
+          <div class="radio-group" style="flex-direction:row;gap:0.5rem;flex-wrap:wrap">
+            <label style="flex:1;min-width:80px"><input type="radio" name="gender" value="Male"> Male</label>
+            <label style="flex:1;min-width:80px"><input type="radio" name="gender" value="Female"> Female</label>
+            <label style="flex:1;min-width:80px"><input type="radio" name="gender" value="Other"> Other</label>
+          </div></div>
+      </div>
+      <div class="field"><label class="field-label">4. Highest level of education completed</label>
         <select id="education"><option value="">Select…</option><option>Primary / comprehensive</option><option>Upper secondary / vocational</option><option>Bachelor's degree</option><option>Master's degree</option><option>Doctoral degree</option></select></div>
-    </div>
-    <div class="field"><label class="field-label">5. Region / city of residence</label>
-      <select id="region"><option value="">Select…</option><option>Helsinki-Uusimaa</option><option>Pirkanmaa</option><option>Southwest Finland</option><option>North Savo</option><option>North Karelia</option><option>South Karelia</option><option>Kymenlaakso</option><option>South Savo</option><option>Lapland</option><option>Other</option></select></div>
-    <div class="field"><label class="field-label">6. Do you live in a border or near-border district?</label>
-      <div class="radio-group" style="flex-direction:row;gap:0.5rem;flex-wrap:wrap">
-        <label style="flex:1;min-width:110px"><input type="radio" name="border" value="Yes"> Yes</label>
-        <label style="flex:1;min-width:110px"><input type="radio" name="border" value="No"> No</label>
-        <label style="flex:1;min-width:110px"><input type="radio" name="border" value="Unsure"> Unsure</label>
-      </div></div>
-    <div class="nav-row">
-      <button class="btn" onclick="startInterview()">Continue to interview &#8594;</button>
-      <span class="val-msg" id="bg-val">Please answer all questions before continuing.</span>
+      <div class="field"><label class="field-label">5. Region / city of residence</label>
+        <select id="region"><option value="">Select…</option><option>Helsinki-Uusimaa</option><option>Pirkanmaa</option><option>Southwest Finland</option><option>North Savo</option><option>North Karelia</option><option>South Karelia</option><option>Kymenlaakso</option><option>South Savo</option><option>Lapland</option><option>Other</option></select></div>
+      <div class="field"><label class="field-label">6. Do you live in a border or near-border district?</label>
+        <div class="radio-group" style="flex-direction:row;gap:0.5rem;flex-wrap:wrap">
+          <label style="flex:1;min-width:110px"><input type="radio" name="border" value="Yes"> Yes</label>
+          <label style="flex:1;min-width:110px"><input type="radio" name="border" value="No"> No</label>
+          <label style="flex:1;min-width:110px"><input type="radio" name="border" value="Unsure"> Unsure</label>
+        </div></div>
+      <div class="nav-row">
+        <button class="btn" onclick="startInterview()">Continue to interview &#8594;</button>
+        <span class="val-msg" id="bg-val">Please answer all questions before continuing.</span>
+      </div>
     </div>
   </div>
 
-  <!-- ══ PHASE 2 — AI INTERVIEW ══ -->
+  <!-- PHASE 2 — AI INTERVIEW -->
   <div id="phase2" style="display:none">
     <div class="prog-wrap">
       <div class="prog-meta"><span>AI Research Interview</span><span>Step 2 of 2</span></div>
@@ -241,7 +215,7 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--paper);color:var(--
     </div>
   </div>
 
-  <!-- ══ PHASE 3 — EXPORT ══ -->
+  <!-- PHASE 3 — EXPORT -->
   <div id="phase3" style="display:none">
     <div class="export-hero">
       <h2>Thank you for participating</h2>
@@ -254,15 +228,16 @@ body{font-family:'Source Sans 3',sans-serif;background:var(--paper);color:var(--
     </div>
   </div>
 
-</div><!-- /container -->
+</div>
 
 <script>
 // ── CONFIG ──────────────────────────────────────────────────────────────────
-const PROXY_URL = 'https://nato-proxy.sanju-ju33-eng.workers.dev';
-const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbz0imyX41RM7Yj--5DqaLRkRngswj6vkci8hBjRQUqdkV9wG3HLWVpxIi6U0b4M0vn0tg/exec';
+const PROXY_URL = 'https://YOUR-WORKER-NAME.YOUR-USERNAME.workers.dev';
+const SHEETS_URL = 'YOUR-GOOGLE-SHEETS-APPS-SCRIPT-URL';
 const TOTAL_Q = 18;
 
 // ── STATE ───────────────────────────────────────────────────────────────────
+const SESSION_ID = crypto.randomUUID();
 let bgData = {};
 let chatHistory = [];
 let qIdx = 0;
@@ -404,7 +379,7 @@ async function callClaude(userMsg){
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({
-      model:'claude-sonnet-4-6',
+      model:'claude-sonnet-4-20250514',
       max_tokens:500,
       system:buildSystem(),
       messages:chatHistory
@@ -483,7 +458,7 @@ function addTonePill(tag,afterEl){
 async function handleResponse(userMsg){
   const btn=document.getElementById('send-btn');
   btn.disabled=true;
-  if(qIdx<TOTAL_Q-1) qIdx++;
+  if(qIdx<TOTAL_Q) qIdx++;
   updateQdots();
   const t=addMsg('Thinking…','typing');
   try{
@@ -493,7 +468,8 @@ async function handleResponse(userMsg){
     const msgEl=addMsg(visible,'ai');
     addTonePill(toneTag,msgEl);
     if(choices) addChoices(choices);
-    await saveToSheets(true);
+    const isComplete = qIdx >= TOTAL_Q;
+    await saveToSheets(!isComplete);
   }catch(e){
     t.remove();
     addMsg('Connection error: '+e.message,'ai');
@@ -522,7 +498,7 @@ async function initChat(){
   const btn=document.getElementById('send-btn'); btn.disabled=true;
   const t=addMsg('Connecting to AI interviewer…','typing');
   try{
-    const raw=await callClaude('Hello, please begin the interview.');
+    const raw=await callClaude(null);
     t.remove();
     const{visible,toneTag,choices}=parseReply(raw);
     const msgEl=addMsg(visible,'ai');
@@ -547,6 +523,7 @@ async function saveToSheets(partial){
       method:'POST',mode:'no-cors',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
+        session_id: SESSION_ID,
         ...bgData,
         transcript:buildTranscript(),
         tone_summary:toneTags.join(' | '),
@@ -564,7 +541,9 @@ async function saveToSheets(partial){
 
 // ── EXPORT ───────────────────────────────────────────────────────────────────
 async function goExport(){
-  await saveToSheets(false);
+  if(qIdx < TOTAL_Q){
+    await saveToSheets(false);
+  }
   document.getElementById('phase2').style.display='none';
   document.getElementById('phase3').style.display='block';
   setTab(3);
