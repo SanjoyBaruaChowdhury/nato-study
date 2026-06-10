@@ -375,6 +375,7 @@ RULES:
 // ── CLAUDE API CALL ──────────────────────────────────────────────────────────
 async function callClaude(userMsg){
   if(userMsg) chatHistory.push({role:'user',content:userMsg});
+  const messages = chatHistory.length > 0 ? chatHistory : [{role:'user',content:'Hello, please begin the interview.'}];
   const res=await fetch(PROXY_URL,{
     method:'POST',
     headers:{'Content-Type':'application/json'},
@@ -382,7 +383,7 @@ async function callClaude(userMsg){
       model:'claude-sonnet-4-20250514',
       max_tokens:500,
       system:buildSystem(),
-      messages:chatHistory
+      messages:messages
     })
   });
   const d=await res.json();
